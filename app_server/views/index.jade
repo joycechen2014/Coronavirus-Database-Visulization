@@ -2,14 +2,14 @@ extends layout
 
 block content
   h1= title
-  p 
+  p
      form(action = "/register" method = "POST")
       table(border='1', align='left')
         caption Registration form
         tbody
-          tr 
-            th Enter your username 
-            td 
+          tr
+            th Enter your username
+            td
               input(type = 'text',name ='username',maxlength ='10',title ='enter you username',placeholder ='enter your username', required='')
           tr
             th Enter your first name
@@ -39,4 +39,5 @@ block content
             td(colspan='2', align='center')
               input(type='submit', value='Submit')
               input(type='reset', value='Clear')
-  
+  p
+    include ./chart
