@@ -10,7 +10,7 @@ router.get('/', ctrlMain.index);
 /*
  * GET registration page.
  */
-router.get('/register', ctrlMain.get_register);
+//router.get('/register', ctrlMain.get_register);
 
 /*
  * POST registration page.

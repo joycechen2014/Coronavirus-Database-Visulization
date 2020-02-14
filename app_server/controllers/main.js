@@ -22,30 +22,34 @@ module.exports.loggedIn = function(req, res, next)
 module.exports.index = function(req, res, next) 
 {
     res.render('index', { title: 'Cornavirus Database Virtulization' });
-    console.log('Cookies: ', req.cookies);
+   // console.log('Cookies: ', req.cookies);
 };
 
 /*
  * GET registration page.
  */
-module.exports.get_register = function(req, res)
-{
-    res.render('register',
-               { message: "Please register!" });
-};
+///module.exports.get_register = function(req, res)
+//{
+//    res.render('register',
+//               { message: "Please register!" });
+//};
 
 /*
  * POST registration page.
  */
 module.exports.post_register = function(req, res)
 {
-    if(!req.body.username || !req.body.password)
+	
+    if(!req.body.username)
     {
         res.status("400");
-        res.send("Invalid details!");
+        res.send("Username can not be empty!");
     } 
-    else 
-    {
+    else if (!req.body.password) {
+    	res.status("400");
+    	res.send("Password can not be empty!");
+    }
+    else {
         // Create an array of users with matching usernames.
         var matches = registeredUsers.filter(function(user)
                       {

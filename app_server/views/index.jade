@@ -3,26 +3,30 @@ extends layout
 block content
   h1= title
   p 
-      form(method='', action='')
+     form(action = "/register" method = "POST")
       table(border='1', align='left')
         caption Registration form
         tbody
+          tr 
+            th Enter your username 
+            td 
+              input(type = 'text',name ='username',maxlength ='10',title ='enter you username',placeholder ='enter your username', required='')
           tr
             th Enter your first name
             td
-              input(type='text', name='fn', maxlength='10', title='enter your first name', placeholder='enter your first name', required='')
+              input(type='text', name='firstname', maxlength='10', title='enter your first name', placeholder='enter your first name')
           tr
             th Enter your last name
             td
-              input(type='text')
+              input(type='text' name ='lastname',maxlength ='10', title='enter your last name', placeholder='enter your last name' )
           tr
             th Enter your password
             td
-              input(type='password')
+              input(type='password',name ='password')
           tr
             th ReEnter your password
             td
-              input(type='password')
+              input(type='password',name ='passwordConfirm')
           tr
             th Enter your email
             td
