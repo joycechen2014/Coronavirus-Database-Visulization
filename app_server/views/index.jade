@@ -9,7 +9,7 @@ html(lang='en')
         link(rel='stylesheet', type='text/css', href='style1.css')
         script(src='https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js')
     body
- 
+
   p
 
             h1 CoronaVirus Database Visualization
@@ -34,8 +34,13 @@ html(lang='en')
             toolbox: {
               left: 'center',
               feature: {
-                dataView: {},
-                saveAsImage: {}
+                dataView: {
+                  title: 'data view',
+                  lang: ['data view', 'turn off', 'refresh'],
+                },
+                saveAsImage: {
+                  title: 'Save as image'
+                }
               }
             },
             dataZoom: [{
@@ -89,7 +94,7 @@ html(lang='en')
             }
           };
           myChart.setOption(option);
-  
+
     .login
      form(action = "/register" method = "POST")
       table(border='1')
