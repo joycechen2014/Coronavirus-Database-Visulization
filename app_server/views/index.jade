@@ -1,10 +1,98 @@
-extends layout
-
-block content
-  h1= title
+//extends layout
+//extends chart
+//block content
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title CoronaVirus Database Visualization
+        // import echarts.js
+        link(rel='stylesheet', type='text/css', href='style1.css')
+        script(src='https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js')
+    body
+ 
   p
+
+            h1 CoronaVirus Database Visualization
+        #main(style='width: 70%;height:600px;float:left')
+        script(type='text/javascript').
+          var myChart = echarts.init(document.getElementById('main'));
+          option = option = {
+            title: {
+              text: 'CoronaVirus Total Counts Per Day'
+            },
+            tooltip: {
+              trigger: 'axis'
+            },
+            xAxis: {
+              data: ["02/01/2020","02/02/2020","02/03/2020","02/04/2020","02/05/2020","02/06/2020","02/07/2020","02/08/2020","02/09/2020","02/10/2020","02/11/2020","02/12/2020","02/13/2020","02/14/2020"]
+            },
+            yAxis: {
+              splitLine: {
+                show: false
+              }
+            },
+            toolbox: {
+              left: 'center',
+              feature: {
+                dataView: {},
+                saveAsImage: {}
+              }
+            },
+            dataZoom: [{
+              startValue: '02/01/2020'
+            }, {
+              type: 'inside'
+            }],
+            visualMap: {
+              top: 10,
+              right: 10,
+              pieces: [{
+                gt: 0,
+                lte: 15000,
+                color: '#096'
+              }, {
+                gt: 15000,
+                lte: 20000,
+                color: '#ffde33'
+              }, {
+                gt: 20000,
+                lte: 30000,
+                color: '#ff9933'
+              }, {
+                gt: 30000,
+                lte: 50000,
+                color: '#cc0033'
+              }, {
+                gt: 50000,
+                color: '#7e0023'
+              }],
+              outOfRange: {
+                color: '#999'
+              }
+            },
+            series: {
+              name: 'CoronaVirus Total Counts',
+              type: 'line',
+              data: [14380,17205,20438,24324,28018,31161,31774,33738,35982,37626,38800,52526,55748,63936],
+              markLine: {
+                silent: true,
+                data: [{
+                  yAxis: 15000
+                }, {
+                  yAxis: 20000
+                }, {
+                  yAxis: 30000
+                }, {
+                  yAxis: 50000
+                }]
+              }
+            }
+          };
+          myChart.setOption(option);
+  
+    .login
      form(action = "/register" method = "POST")
-      table(border='1', align='left')
+      table(border='1')
         caption Registration form
         tbody
           tr
@@ -39,5 +127,3 @@ block content
             td(colspan='2', align='center')
               input(type='submit', value='Submit')
               input(type='reset', value='Clear')
-  p
-    include ./chart
