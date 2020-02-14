@@ -3,65 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <title>CoronaVirus Database Visualization</title>
+    <link rel='stylesheet' type='text/css' href='../css/style1.css'>
+    <!-- import echarts.js -->
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
 </head>
 <body>
-    <h1>CoronaVirus Database Visualization</h1>
-    <p>
-    <form action="/register" method="POST">
-        <table border="1" align="left">
-            <caption>Registration form</caption>
-            <tbody>
-            <tr>
-                <th>Enter your username </th>
-                <td>
-                    <input type="text" name="username" maxlength="10" title="enter you username" placeholder="enter your username" required=""/>
-                </td>
-            </tr>
-            <tr>
-                <th>Enter your first name</th>
-                <td>
-                    <input type="text" name="firstname" maxlength="10" title="enter your first name" placeholder="enter your first name"/>
-                </td>
-            </tr>
-            <tr>
-                <th>Enter your last name</th>
-                <td>
-                    <input type="text" name="lastname" maxlength="10" title="enter your last name" placeholder="enter your last name"/>
-                </td>
-            </tr>
-            <tr>
-                <th>Enter your password</th>
-                <td>
-                    <input type="password" name="password"/>
-                </td>
-            </tr>
-            <tr>
-                <th>ReEnter your password</th>
-                <td>
-                    <input type="password" name="passwordConfirm"/>
-                </td>
-            </tr>
-            <tr>
-                <th>Enter your email</th>
-                <td>
-                    <input type="email" placeholder="xxxx@xxx.xxx"/>
-                </td>
-            </tr>
-            <tr>
-                <th>Enter your mobile</th>
-                <td>
-                    <input type="number" placeholder="(xxx)xxx-xxxx"/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <input type="submit" value="Submit"/>
-                    <input type="reset" value="Clear"/>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </form>
-    </p>
+<h1>CoronaVirus Database Visualization</h1>
+
+<div id="chart" style="width: 80%; height: 600px"></div>
+<script type="text/javascript">
+  var myChart = echarts.init(document.getElementById('chart'));
+  option = option = {
+    title: {
+      text: 'Total Count Chart'
+    },
+    tooltip: {
+      trigger: 'axis'
+    },
+    xAxis: {
+      data: ["02/01/2020","02/02/2020","02/03/2020","02/04/2020","02/05/2020","02/06/2020","02/07/2020","02/08/2020","02/09/2020","02/10/2020","02/11/2020","02/12/2020","02/13/2020","02/14/2020"]
+    },
+    yAxis: {
+      splitLine: {
+        show: false
+      }
+    },
+    toolbox: {
+      left: 'center',
+      feature: {
+        dataView: {
+          title: 'data view',
+          lang: ['data view', 'turn off', 'refresh'],
+        },
+        saveAsImage: {
+          title: 'Save as image'
+        }
+      }
+    },
+    dataZoom: [{
+      startValue: '02/01/2020'
+    }, {
+      type: 'inside'
+    }],
+    visualMap: {
+      top: 10,
+      right: 10,
+      pieces: [{
+        gt: 0,
+        lte: 15000,
+        color: '#096'
+      }, {
+        gt: 15000,
+        lte: 20000,
+        color: '#ffde33'
+      }, {
+        gt: 20000,
+        lte: 30000,
+        color: '#ff9933'
+      }, {
+        gt: 30000,
+        lte: 50000,
+        color: '#cc0033'
+      }, {
+        gt: 50000,
+        color: '#7e0023'
+      }],
+      outOfRange: {
+        color: '#999'
+      }
+    },
+    series: {
+      name: 'CoronaVirus Total Counts',
+      type: 'line',
+      data: [14380,17205,20438,24324,28018,31161,31774,33738,35982,37626,38800,52526,55748,63936],
+      markLine: {
+        silent: true,
+        data: [{
+          yAxis: 15000
+        }, {
+          yAxis: 20000
+        }, {
+          yAxis: 30000
+        }, {
+          yAxis: 50000
+        }]
+      }
+    }
+  };
+  myChart.setOption(option);
+</script>
 </body>
 </html>

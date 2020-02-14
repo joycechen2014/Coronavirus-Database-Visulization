@@ -1,8 +1,10 @@
 .chart{
     float:left;
-    margin: 5px; 
+    margin: 5px;
+    width: 80%;
+    height:600px;
 }
 .login{
     float:right;
-   margin: 5px; 
+   margin: 5px;
 }
