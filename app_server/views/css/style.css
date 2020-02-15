@@ -1,8 +1,8 @@
 #chart{
-    float:left;
-    margin: 5px;
+    margin: 150px auto;
     width: 80%;
     height:600px;
+    text-align: center;
 }
 .login{
     float:right;
