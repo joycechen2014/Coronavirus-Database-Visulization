@@ -1,0 +1,75 @@
+doctype html
+html(lang='zh')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Download CoronaVirus Data
+    link(rel='stylesheet', href='http://libs.baidu.com/bootstrap/3.2.0/css/bootstrap.min.css')
+  body
+    header.jq22-header
+    section.jq22-container
+      .container(style='padding:30px 0')
+        .row
+          .md-col-8
+            .table-responsive.table2excel(data-tablename='Data Table')
+              table#dataTable.table.table-striped.table-bordered.table-hover
+                // <table class="mytable">
+                thead
+                  tr.Table
+                    td.success Date
+                    td.success Total counts in China
+                tbody
+                  tr
+                    td 02/01/2020
+                    td 14380
+                  tr
+                    td 02/02/2020
+                    td 17205
+                  tr
+                    td 02/03/2020
+                    td 20438
+                  tr
+                    td 02/04/2020
+                    td 24324
+                  tr
+                    td 02/05/2020
+                    td 28018
+                  tr
+                    td 02/06/2020
+                    td 31161
+                  tr
+                    td 02/07/2020
+                    td 31774
+                  tr
+                    td 02/08/2020
+                    td 33738
+                  tr
+                    td 02/09/2020
+                    td 35982
+                  tr
+                    td 02/10/2020
+                    td 37626
+                  tr
+                    td 02/11/2020
+                    td 38800
+                  tr
+                    td 02/12/2020
+                    td 52526
+                  tr
+                    td 02/13/2020
+                    td 55748
+                  tr
+                    td 02/14/2020
+                    td 63936
+        button#btn.btn.btn-primary Download
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')
+    script(src='https://cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js')
+    script.
+      $(function() {
+      $("#btn").click(function(){
+      $("#dataTable").table2excel({
+      filename: "Data Of Today.xls"
+      });
+      });
+      });
