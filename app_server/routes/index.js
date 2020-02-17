@@ -35,7 +35,7 @@ router.get('/logout', ctrlMain.get_logout);
 /*
  * GET protected page.
  */
-router.get('/protected', ctrlMain.loggedIn, ctrlMain.get_protected);
+router.get('/download', ctrlMain.loggedIn, ctrlMain.get_download);
 
 module.exports = router;/**
  * http://usejsdoc.org/

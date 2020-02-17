@@ -93,8 +93,8 @@ module.exports.post_login = function(req, res)
     // Create an array of users with matching credentials.
     var matches = registeredUsers.filter(function(user)
                   {
-                      return    (user.username === req.body.username)
-                             && (user.password === req.body.password);
+                      return  (user.username === req.body.username)
+                          && (user.password === req.body.password);
                   });
 
     console.log("Matching credentials: "); console.log(matches);
@@ -142,9 +142,9 @@ module.exports.get_logout = function(req, res)
 };
 
 /*
- * GET protected page.
+ * GET download page.
  */
-module.exports.get_protected = function(req, res)
+module.exports.get_download = function(req, res)
 {
-    res.render('protected', { name: req.session.user.username });
+    res.render('download', { name: req.session.user.username });
 };

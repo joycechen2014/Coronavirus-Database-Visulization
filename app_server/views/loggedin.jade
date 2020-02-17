@@ -1,8 +1,15 @@
 html
    head
       title Logged in page
+      style
+         include ./css/style.css
    body
       //button#btn.btn.btn-primary(onclick="window.location.href = '/logout';") Logout
+
       p Hi, #{name}, you're now logged in.
-      p You may download the #[a(href="/protected") data].
+         button.btn
+            a(href='/download') Download
+         button.btn
+            a(href='/logout') Logout
+      //p You may download the #[a(href="/protected") data].
       include chart
