@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CoronaVirus Database Visualization</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' href='../css/style.css'>
     <!-- import echarts.js -->
     <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
@@ -10,92 +11,24 @@
 <body>
 <div >
     <h1 class="banner">CoronaVirus Database Visualization</h1>
-    <div class="banner users">
-        <button>New User</button>
-        <button>Login</button>
+    <div class="login_form">
+        <form>
+            <fieldset>
+                <div>
+                    <label for="username">Username: </label>
+                    <input id="username" type="text"/>
+                </div>
+                <div>
+                    <label for="password">Password: </label>
+                    <input id="password" type="password" />
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary newUser_button">New User?</button>
+                    <button type="button" class="btn btn-success login_button">Login</button>
+                </div>
+            </fieldset>
+        </form>
     </div>
 </div>
-<div id="chart"></div>
-<script type="text/javascript">
-  var myChart = echarts.init(document.getElementById('chart'));
-  option = option = {
-    title: {
-      text: 'Total Count Chart'
-    },
-    tooltip: {
-      trigger: 'axis'
-    },
-    xAxis: {
-      data: ["02/01/2020","02/02/2020","02/03/2020","02/04/2020","02/05/2020","02/06/2020","02/07/2020","02/08/2020","02/09/2020","02/10/2020","02/11/2020","02/12/2020","02/13/2020","02/14/2020"]
-    },
-    yAxis: {
-      splitLine: {
-        show: false
-      }
-    },
-    toolbox: {
-      left: 'center',
-      feature: {
-        dataView: {
-          title: 'data view',
-          lang: ['data view', 'turn off', 'refresh'],
-        },
-        saveAsImage: {
-          title: 'Save as image'
-        }
-      }
-    },
-    dataZoom: [{
-      startValue: '02/01/2020'
-    }, {
-      type: 'inside'
-    }],
-    visualMap: {
-      top: 10,
-      right: 10,
-      pieces: [{
-        gt: 0,
-        lte: 15000,
-        color: '#096'
-      }, {
-        gt: 15000,
-        lte: 20000,
-        color: '#ffde33'
-      }, {
-        gt: 20000,
-        lte: 30000,
-        color: '#ff9933'
-      }, {
-        gt: 30000,
-        lte: 50000,
-        color: '#cc0033'
-      }, {
-        gt: 50000,
-        color: '#7e0023'
-      }],
-      outOfRange: {
-        color: '#999'
-      }
-    },
-    series: {
-      name: 'CoronaVirus Total Counts',
-      type: 'line',
-      data: [14380,17205,20438,24324,28018,31161,31774,33738,35982,37626,38800,52526,55748,63936],
-      markLine: {
-        silent: true,
-        data: [{
-          yAxis: 15000
-        }, {
-          yAxis: 20000
-        }, {
-          yAxis: 30000
-        }, {
-          yAxis: 50000
-        }]
-      }
-    }
-  };
-  myChart.setOption(option);
-</script>
 </body>
 </html>

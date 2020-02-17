@@ -6,15 +6,26 @@
 }
 
 .banner {
-    display: inline-block;
+    text-align: center;
 }
 
 /*.users {*/
 /*    float: right;*/
-/*    vertical-align: top;*/
+/*    margin-top: 10px;*/
+/*    margin-right: 5%;*/
 /*}*/
 
 .login{
     float:right;
     margin: 5px;
 }
+
+.login_form{
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.login_button {
+    
+}
+
