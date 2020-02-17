@@ -1,3 +1,4 @@
+var path = require('path');
 var registeredUsers = [];
 
 module.exports.loggedIn = function(req, res, next)
@@ -30,8 +31,7 @@ module.exports.index = function(req, res, next)
  */
 module.exports.get_register = function(req, res)
 {
-   res.render('register',
-              { message: "Please register!" });
+	res.sendFile(path.join(__dirname+'/../../register.html'));
 };
 
 /*

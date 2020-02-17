@@ -14,7 +14,7 @@ app.set('view engine', 'jade');
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true })); 
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
 app.use(session( {secret: "String for encrypting cookies." } ));
 
 app.use('/', index);
