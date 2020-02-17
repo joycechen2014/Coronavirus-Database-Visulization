@@ -6,10 +6,9 @@ html(lang='en')
         // import echarts.js
         script(src='https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js')
     body
-        h1 CoronaVirus Database Visualization
-        #main(style='width: 80%;height:600px;')
+        div#chart
         script(type='text/javascript').
-          var myChart = echarts.init(document.getElementById('main'));
+          var myChart = echarts.init(document.getElementById('chart'));
           option = option = {
             title: {
               text: 'CoronaVirus Total Counts Per Day'
