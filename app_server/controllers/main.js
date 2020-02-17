@@ -58,7 +58,9 @@ module.exports.post_register = function(req, res)
         // If there is a match, the user has already registered.
         if (matches.length > 0)
         {
-            res.render('register', {message: "User already registered!"});
+        	// res.render('register', {message: "User already registered!"});
+        	//res.sendFile(path.join(__dirname+'/../../register.html'));
+        	res.send("User already registered!!");
         }
 
         // Register a new user.
