@@ -1,3 +1,11 @@
+.title {
+    display: inline-block;
+}
+
+.user_button {
+    display: inline;
+}
+
 #chart{
     margin: 30px auto;
     width: 80%;
@@ -9,23 +17,33 @@
     text-align: center;
 }
 
-/*.users {*/
-/*    float: right;*/
-/*    margin-top: 10px;*/
-/*    margin-right: 5%;*/
-/*}*/
-
-.login{
-    float:right;
-    margin: 5px;
-}
-
 .login_form{
     text-align: center;
     margin-top: 5rem;
 }
 
-.login_button {
-    
+.btn {
+    font-size: 14px;
+    background-color: aqua;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    margin-left: 5rem;
 }
+
+
+
 
