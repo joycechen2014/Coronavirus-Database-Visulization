@@ -1,42 +1,43 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 var ctrlMain = require("../controllers/main");
 
 /*
  * GET home page.
  */
-router.get('/', ctrlMain.index);
+router.get("/", ctrlMain.index);
 
 /*
  * GET registration page.
  */
-router.get('/register', ctrlMain.get_register);
+router.get("/register", ctrlMain.get_register);
 
 /*
  * POST registration page.
  */
-router.post('/register', ctrlMain.post_register);
+router.post("/register", ctrlMain.post_register);
 
 /*
  * GET login page.
  */
-router.get('/login', ctrlMain.get_login);
+router.get("/login", ctrlMain.get_login);
 
 /*
  * POST login page.
  */
-router.post('/login', ctrlMain.post_login);
+router.post("/login", ctrlMain.post_login);
 
 /*
  * GET logout page.
  */
-router.get('/logout', ctrlMain.get_logout);
+router.get("/logout", ctrlMain.get_logout);
 
 /*
  * GET protected page.
  */
-router.get('/download', ctrlMain.loggedIn, ctrlMain.get_download);
+router.get("/download", ctrlMain.loggedIn, ctrlMain.get_download);
 
-module.exports = router;/**
+module.exports = router;
+/**
  * http://usejsdoc.org/
  */
