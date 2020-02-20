@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CoronaVirus Database Visualization</title>
+    <link rel='stylesheet' type='text/css' href='/css/style.css'>
+    <!-- import echarts.js -->
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+</head>
+<body>
+<div>
+    <h1 class="title">CoronaVirus Database Visualization</h1>
+    <div class="login_form" >
+        <form action="/login" method="POST" class="none_border">
+            <div class="group">
+                    <label for="username">Username: </label>
+                    <input id="username" type="text"/>
+                </div>
+            <div class="group">
+                    <label for="password">Password: </label>
+                    <input id="password" type="password" />
+                </div>
+            <div class="group">
+                    <button type="button" class="btn"><a href="/register" methods="GET">New User?</a></button>
+<!--                    <button type="button" class="btn"><a href="/login" methods="POST">Login?</a></button>-->
+                    <input type="submit" value="Login" class="btn">
+                </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
