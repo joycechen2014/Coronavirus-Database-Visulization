@@ -101,7 +101,12 @@ module.exports.post_login = function(req, res)
 
     if (matches.length === 0)
     {
-        res.render('login', {message: "Invalid credentials!"});
+    	
+        //res.render("/", {message: "Invalid credentials!"});
+    	 //req.flash('info', 'Invalid credentials');
+    	 res.sendFile(path.join(__dirname+'/../../index.html'));
+    	
+    	
     }
     else
     {

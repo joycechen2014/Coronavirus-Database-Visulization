@@ -151,4 +151,86 @@ h4{
    text-align: center;
 }
 
+.user_button {
+    display: inline;
+}
+
+#chart {
+    margin: 30px auto;
+    width: 80%;
+    height: 600px;
+    text-align: center;
+}
+
+.banner {
+    text-align: center;
+}
+
+.login_form {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.btn {
+    font-size: 14px;
+    background-color: #fff;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    margin-left: 5rem;
+}
+
+.daymode {
+    font-size: 14px;
+    background-color: white;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+    position: absolute;
+    top: 0.5rem;
+    right: 7rem;
+    border: 2px solid #555555;
+}
+
+.nightmode {
+    font-size: 14px;
+    background-color: lightgrey;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.1rem;
+    border: 2px solid #555555;
+}
+
 
