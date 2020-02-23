@@ -36,10 +36,18 @@
 	width: 100%;
 	margin-bottom:20px;
 }
-a:link {color:#0000FF;}     
-a:visited {color:#00FF00;}  
-a:hover {color:#0000FF;} 
-a:active {color:#0000FF;}  
+
+#chart {
+    margin: 30px auto;
+    width: 80%;
+    height: 600px;
+    text-align: center;
+}
+
+a:link {color:#0000FF;}
+a:visited {color:#00FF00;}
+a:hover {color:#0000FF;}
+a:active {color:#0000FF;}
 
 .login_form input[type="submit"] {
 
@@ -76,7 +84,7 @@ input[type =text],[type = password],[type = email],[type = tel]:invalid
 	border-radius:5px;
 	margin:5px;
 	font-weight:bold;
-	
+
 }
 input[type =submit] {
 	width:100%;
@@ -94,7 +102,7 @@ input[type =submit] {
 input[type =submit]:hover {
 	background:#003366;
 	opacity:0.7;
-	
+
 }
 h2{
 	text-align:center;
