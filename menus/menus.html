@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel='stylesheet' type='text/css' href='/css/style.css'>
     <title>CoronaVirus Database Visualization</title>
+    <link rel='stylesheet' type='text/css' href='/css/style.css'>
+    <script type="text/javascript" src="menus.js"></script>
 </head>
 <body>
-    <div >
+    <div class="border">
         <div >
             <a href="../../charts" methods="GET" class="main_menu">Charts</a>
             <ul class="sub_menu">
@@ -76,6 +77,11 @@
                     <a href="#">Menu3 #3</a>
                 </li>
             </ul>
+        </div>
+        <div class="right_button">
+            <button class="daymode"><a onclick="document.body.style.backgroundColor='white'">Day Mode</a></button>
+            <button class="nightmode"><a onclick="document.body.style.backgroundColor='lightgrey'">Night Mode</a></button>
+            <button class="btn "><a href="../../logout" methods="GET" class="no_text_decoration">Logout</a></button>
         </div>
     </div>
     <br />
