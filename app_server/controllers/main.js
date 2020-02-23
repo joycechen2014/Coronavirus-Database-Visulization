@@ -1,5 +1,5 @@
 var path = require('path');
-var registeredUsers = [];
+var registeredUsers = [{ username: 'guest', password: 'guest' } ];
 
 module.exports.loggedIn = function(req, res, next)
 {
@@ -22,7 +22,8 @@ module.exports.loggedIn = function(req, res, next)
  */
 module.exports.index = function(req, res, next)
 {
-    res.sendFile(path.join(__dirname+'/../../index.html'));
+	 res.render('index');
+    //res.sendFile(path.join(__dirname+'/../../index.html'));
    // console.log('Cookies: ', req.cookies);
 };
 
@@ -101,11 +102,9 @@ module.exports.post_login = function(req, res)
 
     if (matches.length === 0)
     {
-    	
-        //res.render("/", {message: "Invalid credentials!"});
-    	 //req.flash('info', 'Invalid credentials');
-    	 res.sendFile(path.join(__dirname+'/../../index.html'));
-    	
+
+        res.render('index',
+        		{ message: "Username or password invalid!" });
     	
     }
     else

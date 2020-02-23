@@ -1,0 +1,34 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title CoronaVirus Database Visualization
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    // import echarts.js
+    script(src='https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js')
+  body
+    div
+      // <h1 class="title">CoronaVirus Database Visualization</h1>
+      meta(charset='UTF-8')
+      title CoronaVirus Database Visualization
+      link(rel='stylesheet', type='text/css', href='/css/style.css')
+      // import echarts.js
+      script(src='https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js')
+      .header
+        h1 CoronaVirus Database Visualization
+      div
+        .wrap
+          img.logpic(src='/pictures/login.png')
+          form(action='/login', method='POST')
+            input(type='text', placeholder='Username', name='username', required='')
+            input(type='password', placeholder='Password', name='password', required='')
+            div #{message}
+            input(type='submit', value='Submit')
+            
+            a(href='register', method='GET')  Don't have an account
+        .footer
+          center
+            p
+              | Copyright 2020, CoronavirusReport Inc.
+              br
+              |     All Rights Reserved
