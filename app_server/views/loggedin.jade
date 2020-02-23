@@ -6,7 +6,7 @@ html
       link(rel='stylesheet', type='text/css', href='/css/style.css')
    body
       //button#btn.btn.btn-primary(onclick="window.location.href = '/logout';") Logout
-
+      include ../../menus/menus.html
       p Hi, #{name}, you're now logged in.
          button.btn
             a(href='/download') Download
@@ -17,11 +17,11 @@ html
          button.daymode
             a(onclick="document.body.style.backgroundColor='white'") Day Mode
       //p You may download the #[a(href="/protected") data].
-      
-      
+
+
 
       //- input(type='button', value='Night Mode', onclick="document.body.style.backgroundColor='lightgrey'")
       //- input(type='button', value='Day Mode', onclick="document.body.style.backgroundColor='white'")
-         
 
-      include chart
+
+      include charts

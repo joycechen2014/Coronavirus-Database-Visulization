@@ -33,7 +33,12 @@ router.post("/login", ctrlMain.post_login);
 router.get("/logout", ctrlMain.get_logout);
 
 /*
- * GET protected page.
+ * GET charts page.
+ */
+router.get("/charts", ctrlMain.get_charts);
+
+/*
+ * GET download page.
  */
 router.get("/download", ctrlMain.loggedIn, ctrlMain.get_download);
 

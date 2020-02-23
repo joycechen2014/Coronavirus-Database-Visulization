@@ -58,7 +58,7 @@ module.exports.post_register = function(req, res)
         if (matches.length > 0)
         {
         	res.render('register', {message: "User already registered!"});
-   
+
         }
 
         // Register a new user.
@@ -144,6 +144,14 @@ module.exports.get_logout = function(req, res)
         console.log("Nobody is currently logged in!");
         res.send("Nobody is currently logged in!");
     }
+};
+
+/*
+ * GET charts page.
+ */
+module.exports.get_charts= function(req, res)
+{
+  res.render('charts');
 };
 
 /*
