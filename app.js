@@ -7,7 +7,6 @@ var lineReader = require('line-reader');
 var index = require('./app_server/routes/index');
 
 var app = express();
-var flash = require('express-flash');
 
 //View engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
@@ -18,7 +17,6 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, './public')));
 app.use(session( {secret: "String for encrypting cookies." } ));
-app.use(flash());
 
 app.use('/', index);
 
