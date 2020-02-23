@@ -20,7 +20,7 @@ router.post("/register", ctrlMain.post_register);
 /*
  * GET login page.
  */
-router.get("/login", ctrlMain.get_login);
+//router.get("/login", ctrlMain.get_login);
 
 /*
  * POST login page.

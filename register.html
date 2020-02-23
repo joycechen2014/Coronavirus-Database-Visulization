@@ -1,62 +1,24 @@
 <html>
   <head>
     <title>Register</title>
+    <link rel='stylesheet' type='text/css' href='/css/style.css'>
   </head>
   <body>
-    <form action="/register" method="POST">
-      <table border="1" align="center">
-        <caption>New User Register</caption>
-        <tbody>
-          <tr>
-            <th>Enter your username</th>
-            <td>
-              <input type="text" name="username" maxlength="10" title="enter you username" placeholder="enter your username" required=""/>
-            </td>
-          </tr>
-          <tr>
-            <th>Enter your first name</th>
-            <td>
-              <input type="text" name="firstname" maxlength="10" title="enter your first name" placeholder="enter your first name"/>
-            </td>
-          </tr>
-          <tr>
-            <th>Enter your last name</th>
-            <td>
-              <input type="text" name="lastname" maxlength="10" title="enter your last name" placeholder="enter your last name"/>
-            </td>
-          </tr>
-          <tr>
-            <th>Enter your password</th>
-            <td>
-              <input type="password" name="password"/>
-            </td>
-          </tr>
-          <tr>
-            <th>ReEnter your password</th>
-            <td>
-              <input type="password" name="passwordConfirm"/>
-            </td>
-          </tr>
-          <tr>
-            <th>Enter your email</th>
-            <td>
-              <input type="email" placeholder="xxxx@xxx.xxx"/>
-            </td>
-          </tr>
-          <tr>
-            <th>Enter your mobile</th>
-            <td>
-              <input type="number" placeholder="(xxx)xxx-xxxx"/>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2" align="center">
-              <input type="submit" value="Submit"/>
-              <input type="reset" value="Clear"/>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </form>
+  <div class = "wrap">
+      <h2>New User Register</h2>
+      <form action="/register" method="POST">
+       <input type="text" name = "username" placeholder="Username" required=""/>
+       <input type="text" name="firstname" placeholder="FirstName" >
+       <input type="text" name="lastname" placeholder="LastName" >
+       <input type="password" name="password" placeholder="Password" required=""/>
+       <input type="password" placeholder="Re-password" name="passwordConfirm" required=""/>
+       <input type="email" placeholder="Email" name ="email" required=""/>
+       <input type="tel" placeholder="Mobile" name = "mobile" pattern = "^\(\d{3}\) *\d{3}-\d{4}$" required=""/>
+        <input type="submit" value="Submit"/>
+        
+    </form> 
+       
+  </div>
+
   </body>
 </html>

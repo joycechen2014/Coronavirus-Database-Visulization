@@ -31,7 +31,8 @@ module.exports.index = function(req, res, next)
  */
 module.exports.get_register = function(req, res)
 {
-	res.sendFile(path.join(__dirname+'/../../register.html'));
+
+	    res.render('register');
 };
 
 /*
@@ -41,12 +42,10 @@ module.exports.post_register = function(req, res)
 {
     if(!req.body.username)
     {
-        res.status("400");
-        res.send("Username can not be empty!");
+    	res.render('/register' ,{message: "Username can not be empty!"});
     }
     else if (!req.body.password) {
-    	res.status("400");
-    	res.send("Password can not be empty!");
+    	res.render('/register', {message: "Password can not be empty!"});
     }
     else {
         // Create an array of users with matching usernames.
@@ -58,9 +57,8 @@ module.exports.post_register = function(req, res)
         // If there is a match, the user has already registered.
         if (matches.length > 0)
         {
-        	// res.render('register', {message: "User already registered!"});
-        	//res.sendFile(path.join(__dirname+'/../../register.html'));
-        	res.send("User already registered!!");
+        	res.render('register', {message: "User already registered!"});
+   
         }
 
         // Register a new user.
@@ -71,7 +69,7 @@ module.exports.post_register = function(req, res)
             registeredUsers.push(newUser);
             console.log("New user:"); console.log(newUser);
             console.log("Registered users:"); console.log(registeredUsers);
-            res.redirect('/login');
+            res.sendFile(path.join(__dirname+'/../../index.html'));
         }
     }
 };
@@ -79,10 +77,10 @@ module.exports.post_register = function(req, res)
 /*
  * GET login page.
  */
-module.exports.get_login = function(req, res)
-{
-   res.render('login', { message: "Please log in!" });
-};
+//module.exports.get_login = function(req, res)
+//{
+//   res.render('login', { message: "Please log in!" });
+//};
 
 /*
  * POST login page.
