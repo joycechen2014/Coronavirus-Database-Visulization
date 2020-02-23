@@ -205,9 +205,9 @@ h4{
     touch-action: manipulation;
     cursor: pointer;
     /*border: 1px solid transparent;*/
-    position: absolute;
+    /*position: absolute;*/
     top: 0.5rem;
-    right: 7rem;
+    /*right: 7rem;*/
     border: 2px solid #555555;
 }
 
@@ -225,22 +225,42 @@ h4{
     touch-action: manipulation;
     cursor: pointer;
     /*border: 1px solid transparent;*/
-    position: absolute;
+    /*position: absolute;*/
     top: 0.5rem;
-    right: 0.1rem;
+    /*right: 0.1rem;*/
     border: 2px solid #555555;
+}
+.border {
+  border: 1px solid #e7e7e7;
+  background-color: #555555;
+  border-radius: 5px;
+  height: 3rem;
+  line-height: 3rem;
+  vertical-align: center;
 }
 
 .main_menu {
   float: left;
-  display: inline;
+  display: inline-block;
   padding-left: 4rem;
+  text-decoration: none;
 }
 
 .sub_menu {
   float: left;
   display: none;
   list-style-type: none;
+  text-decoration: none;
 }
+
+.right_button {
+  float: right;
+  margin-right: 2rem;
+}
+
+.no_text_decoration {
+  text-decoration: none;
+}
+
 
 
