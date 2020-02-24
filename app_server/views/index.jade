@@ -14,6 +14,17 @@ html(lang='en')
       link(rel='stylesheet', type='text/css', href='/css/style.css')
       // import echarts.js
       script(src='https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js')
+      
+      div
+          canvas#myCanvas(width='200', height='80', style='border:1px solid #d3d3d3;')
+          script.
+            window.onload = function() {
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+            context.font = "bold 16px Arial";
+            context.fillStyle = "red";
+            context.fillText("PRAY FOR WUHAN!", 25, 45);
+            };
       .header
         h1 CoronaVirus Database Visualization
       div
