@@ -5,12 +5,12 @@ var ctrlMain = require("../controllers/main");
 /*
  * GET home page.
  */
-router.get("/", ctrlMain.index);
+router.get("/",ctrlMain.checkSignIn, ctrlMain.index);
 
 /*
  * GET registration page.
  */
-router.get("/register", ctrlMain.get_register);
+router.get("/register",ctrlMain.get_register);
 
 /*
  * POST registration page.

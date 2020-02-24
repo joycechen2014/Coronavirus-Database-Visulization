@@ -16,16 +16,32 @@ module.exports.loggedIn = function(req, res, next)
         res.send("You must first log in.");
     }
 };
+/*
+ * Check sign in.
+ */
+module.exports.checkSignIn = function(req, res, next){
+	   if(req.session.user){
+	      next();     //If session exists, proceed to page
+	   } else {
+
+	        res.render('index',
+	        		{ message: "Please log in!" });
+	   }
+	}
 
 /*
  * GET home page.
  */
 module.exports.index = function(req, res, next)
-{
-	 res.render('index');
+{ 
+
+	 res.render('loggedin', { name: req.session.user.username});
     //res.sendFile(path.join(__dirname+'/../../index.html'));
-   // console.log('Cookies: ', req.cookies);
+    console.log('Cookies: ', req.cookies);
+    console.log('session: ', req.session.user);
 };
+
+
 
 /*
  * GET registration page.
@@ -70,7 +86,8 @@ module.exports.post_register = function(req, res)
             registeredUsers.push(newUser);
             console.log("New user:"); console.log(newUser);
             console.log("Registered users:"); console.log(registeredUsers);
-            res.sendFile(path.join(__dirname+'/../../index.html'));
+            res.render('index',
+	        		{ message: "Please log in!" });
         }
     }
 };
@@ -80,7 +97,7 @@ module.exports.post_register = function(req, res)
  */
 //module.exports.get_login = function(req, res)
 //{
-//   res.render('login', { message: "Please log in!" });
+//   res.render('index', { message: "Please log in!" });
 //};
 
 /*

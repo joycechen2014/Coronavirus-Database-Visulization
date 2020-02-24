@@ -237,7 +237,8 @@ h4{
 }
 
 .inline {
-  display: inline;
+    position: relative;
+  display: inline-block;
 }
 
 .main_menu {
