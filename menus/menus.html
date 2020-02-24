@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>CoronaVirus Database Visualization</title>
     <link rel='stylesheet' type='text/css' href='/css/style.css'>
-    <script type="text/javascript" src="menus.js"></script>
+    <script type="text/javascript" src="/js/menus.js"></script>
 </head>
 <body>
     <div class="border">
-        <div >
+        <div class="inline">
             <a href="../../charts" methods="GET" class="main_menu">Charts</a>
-            <ul class="sub_menu">
+            <ul class="sub_menu" id="menu_charts">
                 <li>
                     <a href="../../charts" methods="GET">Charts #1</a>
                 </li>
@@ -22,9 +22,9 @@
                 </li>
             </ul>
         </div>
-        <div>
+        <div class="inline">
             <a href="../../download" methods="GET" class="main_menu">Downloads</a>
-            <ul class="sub_menu">
+            <ul class="sub_menu" id="menu_downloads">
                 <li>
                     <a href="../../download" methods="GET">Downloads #1</a>
                 </li>
@@ -36,9 +36,9 @@
                 </li>
             </ul>
         </div>
-        <div >
+        <div class="inline">
             <a href="#" class="main_menu">Menu1</a>
-            <ul class="sub_menu">
+            <ul class="sub_menu" id="menu_menu1">
                 <li>
                     <a href="#">Menu1 #1</a>
                 </li>
@@ -50,9 +50,9 @@
                 </li>
             </ul>
         </div>
-        <div>
+        <div class="inline">
             <a href="#" class="main_menu">Menu2</a>
-            <ul class="sub_menu">
+            <ul class="sub_menu" id="menu_menu2">
                 <li>
                     <a href="#">Menu2 #1</a>
                 </li>
@@ -64,9 +64,9 @@
                 </li>
             </ul>
         </div>
-        <div>
+        <div class="inline">
             <a href="#" class="main_menu">Menu3</a>
-            <ul class="sub_menu">
+            <ul class="sub_menu" id="menu_menu3">
                 <li>
                     <a href="#">Menu3 #1</a>
                 </li>
@@ -84,6 +84,5 @@
             <button class="btn "><a href="../../logout" methods="GET" class="no_text_decoration">Logout</a></button>
         </div>
     </div>
-    <br />
 </body>
 </html>

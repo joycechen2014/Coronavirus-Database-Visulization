@@ -231,26 +231,30 @@ h4{
     border: 2px solid #555555;
 }
 .border {
-  border: 1px solid #e7e7e7;
   background-color: #555555;
-  border-radius: 5px;
-  height: 3rem;
   line-height: 3rem;
   vertical-align: center;
 }
 
+.inline {
+  display: inline;
+}
+
 .main_menu {
-  float: left;
-  display: inline-block;
-  padding-left: 4rem;
+  position: relative;
+  padding-left: 3rem;
   text-decoration: none;
 }
 
 .sub_menu {
-  float: left;
+  /*float: left;*/
+  position: absolute;
+  z-index: 1;
   display: none;
   list-style-type: none;
   text-decoration: none;
+  top: 2rem;
+  background-color: #555555;
 }
 
 .right_button {
