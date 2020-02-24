@@ -114,7 +114,7 @@ h4{
   margin:auto;
   justify-content: center;
   display:flex;
-  height: 3vh;
+  height: 2vh;
   padding: 100px;
   /*position: top;*/
   font-family: sans-serif;
@@ -128,7 +128,6 @@ h4{
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
   /*align-items: top;*/
 }
-
 
 @keyframes animate {
   0% {
@@ -238,11 +237,8 @@ h4{
 }
 
 .inline {
-<<<<<<< HEAD
     position: relative;
-=======
   position: relative;
->>>>>>> d87e60a8c5909eb9de6421adadf8fe0321139f47
   display: inline-block;
 }
 
