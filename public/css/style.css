@@ -248,10 +248,17 @@ h4{
   display: inline-block;
 }
 
+
+
 .main_menu {
   padding: 0 3rem;
   text-decoration: none;
 }
+
+.main_menu:link {color:#ffffff;}
+.main_menu:visited {color:#ffffff;}
+.main_menu:hover {color:#00FF00;}
+.main_menu:active {color:#00FF00;}
 
 .sub_menu {
   /*float: left;*/
@@ -264,6 +271,11 @@ h4{
   background-color: #555555;
   padding: 0 3rem;
 }
+
+.sub_link:link {color:#ffffff;}
+.sub_link:visited {color:#ffffff;}
+.sub_link:hover {color:#00FF00;}
+.sub_link:active {color:#00FF00;}
 
 .right_button {
   float: right;
