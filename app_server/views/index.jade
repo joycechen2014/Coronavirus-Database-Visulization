@@ -6,6 +6,11 @@ html(lang='en')
     link(rel='stylesheet', type='text/css', href='/css/style.css')
     // import echarts.js
     script(src='https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js')
+
+    link(rel='stylesheet', href='../jquery-ui/jquery-ui.min.css')    
+    script(src='../jquery-ui/external/jquery/jquery.js')    
+    script(src='../jquery-ui/jquery-ui.min.js')
+
   body
     div
       // <h1 class="title">CoronaVirus Database Visualization</h1>
@@ -28,6 +33,9 @@ html(lang='en')
             };
       .header
         h1 CoronaVirus Database Visualization
+
+
+
       div
         .wrap
           img.logpic(src='/pictures/login.png')
