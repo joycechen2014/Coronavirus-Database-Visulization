@@ -10,6 +10,7 @@ html(lang='en')
     link(rel='stylesheet', href='../jquery-ui/jquery-ui.min.css')    
     script(src='../jquery-ui/external/jquery/jquery.js')    
     script(src='../jquery-ui/jquery-ui.min.js')
+    script(type='text/javascript', src='/js/resize.js')
 
   body
     div
@@ -33,7 +34,10 @@ html(lang='en')
             };
       .header
         h1 CoronaVirus Database Visualization
-
+      div
+         #resizeMe
+          h1.resize Resize me  
+          img.logopic(src='/pictures/logo.jpg')
 
 
       div

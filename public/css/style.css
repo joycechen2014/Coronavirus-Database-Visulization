@@ -285,3 +285,16 @@ h4{
 .no_text_decoration {
   text-decoration: none;
 }
+
+#resizeMe {
+    top: 100px;
+    left: 0%;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+}
+
+.logopic{
+  width: 200px;
+  height: 200px;
+}
