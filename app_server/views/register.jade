@@ -2,22 +2,24 @@ html
   head
     title Register
     link(rel='stylesheet', type='text/css', href='/css/style.css')
-
-    link(rel='stylesheet', href='../jquery-ui/jquery-ui.min.css')    
-    script(src='../jquery-ui/external/jquery/jquery.js')    
+    link(rel='stylesheet', href='../jquery-ui/jquery-ui.min.css')
+    script(src='../jquery-ui/external/jquery/jquery.js')
     script(src='../jquery-ui/jquery-ui.min.js')
-
+    script(src='../js/widgets.js')
   body
     .wrap
-      h2 New User Register
-       if(message)
-         h4 #{message}
+      h2
+        | New User Register
       form(action='/register', method='POST')
         input(type='text', name='username', placeholder='Username', required='')
         input(type='text', name='firstname', placeholder='FirstName')
         input(type='text', name='lastname', placeholder='LastName')
         input(type='password', name='password', placeholder='Password', required='')
         input(type='password', placeholder='Re-password', name='passwordConfirm', required='')
-        input(type='email', placeholder='Email xxxxx@xxxxx.xxx', name='email', pattern='^.+@.+\..{2,4}$',required='')
-        input(type='text', placeholder='Mobile(999)999-9999', name='mobile',pattern = '^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$',required='')
+        input#datepicker(type='text', name='birthdate', placeholder='Birthdate')
+        select#gender(name='gender')
+          option Female
+          option(selected='selected') Male
+        input(type='email', placeholder='Email xxxxx@xxxxx.xxx', name='email', pattern='^.+@.+..{2,4}$', required='')
+        input(type='text', placeholder='Mobile(999)999-9999', name='mobile', pattern='^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$', required='')
         input(type='submit', value='Submit')

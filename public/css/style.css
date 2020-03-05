@@ -63,14 +63,14 @@ a:active {color:#0000FF;}
 .wrap {
 	max-width:350px;
 	border-radius:20px;
-  background:rgba(0,0,0,0.8);
+    background:rgba(0,0,0,0.8);
 	box-sizing:border-box;
 	padding:40px;
 	color:#fff;
-  margin: 100px auto auto;
-  top:200px;
-  position: absolute;
-  left:calc(50% - 200px);
+    margin: 100px auto auto;
+    top:0px;
+    position: absolute;
+    left:calc(50% - 200px);
 }
 
 input[type =text],[type = password],[type = email],[type = tel]:invalid
@@ -88,6 +88,21 @@ input[type =text],[type = password],[type = email],[type = tel]:invalid
 	font-weight:bold;
 
 }
+select {
+	width:100%;
+	box-sizing:border-box;
+	padding:12px 5px;
+	background:rgba(255,255,255,0.10);
+	color:#fff;
+	outline:none;
+	border:none;
+	border-bottom:1px #fff;
+	border-radius:5px;
+	margin:5px;
+	font-weight:bold;
+
+}
+
 input[type =submit] {
 	width:100%;
 	box-sizing:border-box;
@@ -297,4 +312,14 @@ h4{
 .logopic{
   width: 200px;
   height: 200px;
+}
+
+.ui-icon.video {
+    background: url("images/24-video-square.png") 0 0 no-repeat;
+}
+.ui-icon.podcast {
+    background: url("images/24-podcast-square.png") 0 0 no-repeat;
+}
+.ui-icon.rss {
+    background: url("images/24-rss-square.png") 0 0 no-repeat;
 }
