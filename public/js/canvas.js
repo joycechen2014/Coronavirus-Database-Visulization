@@ -9,5 +9,5 @@ window.onload = function() {
 // Drag Me
 $(init);
 function init() {
-  $("#myCanvas").draggable();
+  $("#topPay").draggable();
 }
