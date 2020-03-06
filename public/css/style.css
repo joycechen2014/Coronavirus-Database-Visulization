@@ -100,7 +100,6 @@ select {
 	border-radius:5px;
 	margin:5px;
 	font-weight:bold;
-
 }
 
 input[type =submit] {
@@ -129,7 +128,7 @@ h4{
 }
 
 .header {
-  top:-60px;
+  top: -60px;
   margin:auto;
   justify-content: center;
   display:flex;
@@ -147,7 +146,6 @@ h4{
   animation: animate 4s linear infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
-
 }
 
 @keyframes animate {
@@ -171,6 +169,15 @@ h4{
 
 .user_button {
     display: inline;
+}
+
+#topPay {
+  position: absolute;
+  z-index: 5;
+}
+
+#myCanvas {
+  margin: 0 auto;
 }
 
 #chart {
