@@ -15,11 +15,19 @@ html(lang='en')
     script(src='../js/widgets.js')
   body
     div
+<<<<<<< HEAD
       #topPay
         canvas#myCanvas(width='200', height='80', style='border:1px solid #d3d3d3')
+=======
+      div#topPay
+        canvas#myCanvas(width='200', height='80', style='border:1px solid #d3d3d3;')
+
+      div
+>>>>>>> 48a79f6218292f9f1371f051e3ebbeefba7da745
       .header
         h1 CoronaVirus Database Visualization
       div
+<<<<<<< HEAD
         section
           #accordion
             h3 What You Should Know
@@ -64,3 +72,22 @@ html(lang='en')
                   | Copyright 2020, CoronavirusReport Inc.
                   br
                   |     All Rights Reserve
+=======
+        .wrap
+          img.logpic(src='/pictures/login.png')
+          form(action='/login', method='POST')
+            input(type='text', placeholder='Username', name='username', required='')
+            input(type='password', placeholder='Password', name='password', required='')
+            div #{message}
+            input(type='submit', value='Submit')
+            a(href='register', method='GET')  Don't have an account
+            div#target DROP ON ME
+
+        .footer
+          center
+            p
+              | Copyright 2020, CoronavirusReport Inc.
+              br
+              |     All Rights Reserve
+
+>>>>>>> 48a79f6218292f9f1371f051e3ebbeefba7da745
