@@ -7,10 +7,12 @@ html(lang='en')
     // import echarts.js
     script(src='https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js')
 
-    link(rel='stylesheet', href='../jquery-ui/jquery-ui.min.css')    
-    script(src='../jquery-ui/external/jquery/jquery.js')    
+    link(rel='stylesheet', href='../jquery-ui/jquery-ui.min.css')
+    script(src='../jquery-ui/external/jquery/jquery.js')
     script(src='../jquery-ui/jquery-ui.min.js')
     script(type='text/javascript', src='/js/resize.js')
+    script(type='text/javascript', src='/js/canvas.js')
+    script(type='text/javascript', src='/js/drag.js')
 
   body
     div
@@ -20,24 +22,16 @@ html(lang='en')
       link(rel='stylesheet', type='text/css', href='/css/style.css')
       // import echarts.js
       script(src='https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js')
-      
+
+      div#topPay
+        canvas#myCanvas(width='200', height='80', style='border:3px solid #d3d3d3;')
       div
-         .canvas
-          canvas#myCanvas(width='200', height='80', style='border:1px solid #d3d3d3;')
-          script.
-            window.onload = function() {
-            var canvas = document.getElementById("myCanvas");
-            var context = canvas.getContext("2d");
-            context.font = "bold 16px Arial";
-            context.fillStyle = "red";
-            context.fillText("PRAY FOR WUHAN!", 25, 45);
-            };
       .header
         h1 CoronaVirus Database Visualization
-      div
-         #resizeMe
-          h1.resize Resize me  
-          img.logopic(src='/pictures/logo.jpg')
+      //div
+      //   #resizeMe
+      //    h1.resize Resize me
+      //    img.logopic(src='/pictures/logo.jpg')
 
 
       div
@@ -48,11 +42,11 @@ html(lang='en')
             input(type='password', placeholder='Password', name='password', required='')
             div #{message}
             input(type='submit', value='Submit')
-            
             a(href='register', method='GET')  Don't have an account
         .footer
           center
             p
               | Copyright 2020, CoronavirusReport Inc.
               br
-              |     All Rights Reserved
+              |     All Rights Reserve
+

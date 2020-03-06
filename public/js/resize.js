@@ -2,7 +2,7 @@ $(init);
 
 function init()
 {
-    $("#resizeMe").resizable();
+    $("#myCanvas").resizable();
 
     $("h1.resize").addClass("ui-widget")
             .addClass("ui-widget-content")
