@@ -1,3 +1,7 @@
+#container {
+  height: 100%;
+  width: 100%;
+}
 .none_border {
     border: none;
 }
@@ -330,3 +334,4 @@ h4{
 .ui-icon.rss {
     background: url("images/24-rss-square.png") 0 0 no-repeat;
 }
+
