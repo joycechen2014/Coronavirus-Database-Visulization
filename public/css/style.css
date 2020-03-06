@@ -64,7 +64,22 @@ a:active {color:#0000FF;}
   cursor: pointer;
 }
 
-.wrap {
+.wrap1 {
+	
+	max-width:350px;
+	border-radius:20px;
+    background:rgba(0,0,0,0.8);
+	box-sizing:border-box;
+	padding:40px;
+	color:#fff;
+    margin: 100px auto auto;
+    top:200px;
+    position: absolute;
+    left:calc(70% - 0px);
+}
+
+.wrap2 {
+	
 	max-width:350px;
 	border-radius:20px;
     background:rgba(0,0,0,0.8);
@@ -333,5 +348,14 @@ h4{
 }
 .ui-icon.rss {
     background: url("images/24-rss-square.png") 0 0 no-repeat;
+}
+section {
+    float: left;
+  position: absolute;
+  top:200px;
+  max-width:350px;
+}
+aside {
+  float: right;
 }
 

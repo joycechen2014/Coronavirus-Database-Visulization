@@ -9,5 +9,8 @@ function init()
 	});
 
     $( "#gender" ).selectmenu();
+    $( function() {
+        $( "#accordion" ).accordion();
+      } );
 
 }
