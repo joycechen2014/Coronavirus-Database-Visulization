@@ -11,6 +11,10 @@ function init()
     $( "#gender" ).selectmenu();
     $( function() {
         $( "#accordion" ).accordion();
-      } );
+    });
+
+      $(function() {
+      $("#tabs").tabs();
+      });
 
 }
