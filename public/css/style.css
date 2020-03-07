@@ -75,7 +75,7 @@ a:active {color:#0000FF;}
     margin: 100px auto auto;
     top:100px;
     position: absolute;
-    left:calc(70% - 0px);
+    left:calc(50% - 200px);
 }
 
 .wrap2 {
