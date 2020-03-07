@@ -73,7 +73,7 @@ a:active {color:#0000FF;}
 	padding:40px;
 	color:#fff;
     margin: 100px auto auto;
-    top:200px;
+    top:100px;
     position: absolute;
     left:calc(70% - 0px);
 }
@@ -107,6 +107,8 @@ input[type =text],[type = password],[type = email],[type = tel]:invalid
 	font-weight:bold;
 
 }
+
+
 select {
 	width:100%;
 	box-sizing:border-box;
