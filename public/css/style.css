@@ -386,3 +386,17 @@ aside {
   height: 650px;
   background-color: #ffffff;
 }
+
+.columnchart {
+  float: left;
+  width: 60%;
+  margin: 1rem;
+  background-color: #ffffff;
+}
+
+.columntab {
+  float: right;
+  width: 35%;
+  margin: 1rem;
+  background-color: #ffffff;
+}
