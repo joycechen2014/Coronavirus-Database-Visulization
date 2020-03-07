@@ -7,23 +7,40 @@ window.onload = function() {
 };
 
 // Drag and Drop Me
+//$(init);
+//function init() {
+//  $("#topPay").draggable();
+//  $("#target").droppable();
+//
+//  $("#target").bind("drop", highlightTarget);
+//  $("#target").bind("dropout", reset);
+//}
+//
+//function highlightTarget(event, ui) {
+//  $("#target").addClass("ui-state-highlight")
+//      .html("Dropped")
+//      .append(ui.draggable.text());
+//}
+//
+//function reset(event, ui) {
+//  $("#target").removeClass("ui-state-highlight")
+//      .html("Drop on me");
+//}
+
+
 $(init);
 function init() {
   $("#topPay").draggable();
-  $("#target").droppable();
+  $(".wrap1").droppable();
 
-  $("#target").bind("drop", highlightTarget);
-  $("#target").bind("dropout", reset);
+  $(".wrap1").bind("drop", highlightTarget);
+  $(".wrap1").bind("dropout", reset);
 }
 
 function highlightTarget(event, ui) {
-  $("#target").addClass("ui-state-highlight")
-      .html("Dropped")
-      .append(ui.draggable.text());
+  $(".wrap1").addClass("bg");
 }
 
 function reset(event, ui) {
-  $("#target").removeClass("ui-state-highlight")
-      .html("Drop on me");
+  $(".wrap1").removeClass("bg");
 }
-

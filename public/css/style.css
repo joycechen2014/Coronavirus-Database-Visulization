@@ -65,7 +65,6 @@ a:active {color:#0000FF;}
 }
 
 .wrap1 {
-
 	max-width:350px;
 	border-radius:20px;
     background:rgba(0,0,0,0.8);
@@ -76,6 +75,10 @@ a:active {color:#0000FF;}
     top:100px;
     position: absolute;
     left:calc(50% - 200px);
+}
+
+.bg{
+    background:#f1f1f1;
 }
 
 .wrap2 {
