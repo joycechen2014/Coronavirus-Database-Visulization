@@ -38,9 +38,9 @@ function init() {
 }
 
 function highlightTarget(event, ui) {
-  $(".wrap1").addClass("bg");
+  $(".wrap1").addClass("dropChange");
 }
 
 function reset(event, ui) {
-  $(".wrap1").removeClass("bg");
+  $(".wrap1").removeClass("dropChange");
 }
