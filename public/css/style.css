@@ -65,7 +65,7 @@ a:active {color:#0000FF;}
 }
 
 .wrap1 {
-	
+
 	max-width:350px;
 	border-radius:20px;
     background:rgba(0,0,0,0.8);
@@ -79,7 +79,7 @@ a:active {color:#0000FF;}
 }
 
 .wrap2 {
-	
+
 	max-width:350px;
 	border-radius:20px;
     background:rgba(0,0,0,0.8);
@@ -373,7 +373,16 @@ aside {
   float: right;
 }
 
-/*.ui-state-highlight {*/
-/*  background-color: yellow;*/
-/*}*/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
+.column {
+  float: left;
+  width: 45%;
+  margin: 1rem;
+  height: 650px;
+  background-color: #ffffff;
+}

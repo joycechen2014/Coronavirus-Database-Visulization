@@ -4,31 +4,56 @@ html
       title Logged in page
       style
       link(rel='stylesheet', type='text/css', href='/css/style.css')
-      link(rel='stylesheet', href='../jquery-ui/jquery-ui.min.css')    
-      script(src='../jquery-ui/external/jquery/jquery.js')    
+      link(rel='stylesheet', href='../jquery-ui/jquery-ui.min.css')
+      script(src='../jquery-ui/external/jquery/jquery.js')
       script(src='../jquery-ui/jquery-ui.min.js')
       script(src='../js/widgets.js')
 
    body
       include ../../menus/menus.html
       p Hi, #{name}, you're now logged in.
-      include charts
+      .row
+       .column(style='background-color: #bbb;')
+           include charts
+       .column
+           .row
+               .column
+                   section
+                       #accordion
+                           h3 What You Should Know
+                           div
+                               h2 How COVID-19  Spreads
+                               ul
+                                   li Between people who are in close contact with one another (within about 6 feet).
+                                   li Through respiratory droplets produced when an infected person coughs or sneezes.
+                               a(href='https://www.cdc.gov/coronavirus/2019-nCoV/index.html', title='Source') Source From https://www.cdc.gov/coronavirus/2019-nCoV/index.html!
+                           h3 Situation Updates
+                           div
+                               h2 Situation in U.S.
+                               ul
+                                   li Imported cases of COVID-19 in travelers have been detected in the U.S.
+                                   li Person-to-person spread of COVID-19 was first reported among close contacts of returned travelers from Wuhan.
+                               a(href='https://www.cdc.gov/coronavirus/2019-nCoV/index.html', title='Source') Source From https://www.cdc.gov/coronavirus/2019-nCoV/index.html!
+               .column
+                   #tabs
+                       ul
+                           li
+                               a(href='#fragment-1')
+                                   span Updates
+                           li
+                               a(href='#fragment-2')
+                                   span Symptoms
+                           li
+                               a(href='#fragment-3')
+                                   span Q&A
+                       #fragment-1
+                           p CoronaVirus Disease Update
+                       #fragment-2
+                           p Symptoms of Coronavirus Disease
+                       #fragment-3
+                           p Q&A on coronaviruses
+          //include charts
 
-   #tabs
-      ul
-        li
-          a(href='#fragment-1')
-            span Updates    
-        li
-          a(href='#fragment-2')
-            span Symptoms   
-        li
-          a(href='#fragment-3')
-            span Q&A 
-      #fragment-1
-        p CoronaVirus Disease Update     
-      #fragment-2
-        p Symptoms of Coronavirus Disease
-      #fragment-3
-        p Q&A on coronaviruses
+
+
 
