@@ -4,27 +4,14 @@ html
       title Logged in page
       style
       link(rel='stylesheet', type='text/css', href='/css/style.css')
-
       link(rel='stylesheet', href='../jquery-ui/jquery-ui.min.css')    
       script(src='../jquery-ui/external/jquery/jquery.js')    
       script(src='../jquery-ui/jquery-ui.min.js')
       script(src='../js/widgets.js')
 
    body
-      //button#btn.btn.btn-primary(onclick="window.location.href = '/logout';") Logout
       include ../../menus/menus.html
       p Hi, #{name}, you're now logged in.
-         //button.btn
-         //   a(href='/download') Download
-         //button.btn
-         //   a(href='/logout') Logout
-         //button.nightmode
-         //   a(onclick="document.body.style.backgroundColor='lightgrey'") Night Mode
-         //button.daymode
-         //   a(onclick="document.body.style.backgroundColor='white'") Day Mode
-      //p You may download the #[a(href="/protected") data].
-      //- input(type='button', value='Night Mode', onclick="document.body.style.backgroundColor='lightgrey'")
-      //- input(type='button', value='Day Mode', onclick="document.body.style.backgroundColor='white'")
       include charts
 
    #tabs
