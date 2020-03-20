@@ -182,16 +182,3 @@ module.exports.get_download = function(req, res)
 };
 
 
-/*
- * GET management page.
- */
-module.exports.get_management = function(req, res)
-{
-    // res.render('management');
-    console.log(req.session.user);
-    if(req.session.user === "admin"){
-        res.render('management');
-    } else {
-        res.send("You need Admin privilege to get in Management page.")
-    }
-};

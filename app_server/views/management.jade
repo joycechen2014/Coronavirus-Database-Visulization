@@ -18,22 +18,31 @@ html(lang='zh')
           th.management_th New
           th.management_th Date
           th.management_th Operation
-        tr.mangement_tr
-          td.management_td USA
-          td.management_td 16000
-          td.management_td 5000
-          td.management_td 03/20/2020
-          td.management_td 
-            button.btn.btn-update UPDATE
-            button.btn.btn-delete DELETE
-        tr.mangement_tr
-          td.management_td Canada
-          td.management_td 16000
-          td.management_td 5000
-          td.management_td 03/20/2020
-          td.management_td
-            button.btn.btn-update UPDATE
-            button.btn.btn-delete DELETE
+        each data in datalist
+          tr.mangement_tr
+            td.management_td #{data.country}
+            td.management_td #{data.total}
+            td.management_td #{data.new}
+            td.management_td #{data.dt}
+            td.management_td 
+              button.btn.btn-update UPDATE
+              button.btn.btn-delete DELETE
+        //- tr.mangement_tr
+        //-   td.management_td USA
+        //-   td.management_td 16000
+        //-   td.management_td 5000
+        //-   td.management_td 03/20/2020
+        //-   td.management_td 
+        //-     button.btn.btn-update UPDATE
+        //-     button.btn.btn-delete DELETE
+        //- tr.mangement_tr
+        //-   td.management_td Canada
+        //-   td.management_td 16000
+        //-   td.management_td 5000
+        //-   td.management_td 03/20/2020
+        //-   td.management_td
+        //-     button.btn.btn-update UPDATE
+        //-     button.btn.btn-delete DELETE
     .center-add
       button.btn.btn-add ADD
 

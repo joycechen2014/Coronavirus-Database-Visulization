@@ -42,7 +42,7 @@ router.get("/download", ctrlMain.loggedIn, ctrlMain.get_download);
 /*
  * GET management page.
  */
-router.get("/management", ctrlMain.loggedIn, ctrlMain.get_management);
+router.get("/management", ctrlMain.loggedIn, modelMain.get_management);
 
 module.exports = router;
 /**
