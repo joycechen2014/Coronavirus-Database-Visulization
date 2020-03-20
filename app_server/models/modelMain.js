@@ -71,6 +71,4 @@ module.exports.post_login = function(req, res)
          }
 
     });
-    
-    
 };
