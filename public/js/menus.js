@@ -16,7 +16,8 @@ function init() {
   function toggleMenu() {
     const menu_name = this.innerHTML;
     console.log(menu_name);
-    const thisMenuName = "menu_"+menu_name.toLowerCase();
+    // const thisMenuName = "menu_"+menu_name.toLowerCase();
+    const thisMenuName = menu_name.indexOf("<")>=0? "menu_avatar" : "menu_"+menu_name.toLowerCase();
     console.log(thisMenuName);
     const menuParent = document.getElementById(thisMenuName).parentNode;
     const thisMenuStyle = document.getElementById(thisMenuName).style;

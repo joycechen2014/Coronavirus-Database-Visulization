@@ -180,3 +180,17 @@ module.exports.get_download = function(req, res)
 {
     res.render('download', { name: req.session.user.username });
 };
+
+
+/*
+ * GET management page.
+ */
+module.exports.get_management = function(req, res)
+{
+    res.render('management');
+    // if(req.seesion.user === "admin"){
+    //     res.render('management');
+    // } else {
+    //     res.send("You need Admin privilege to get in Management page.")
+    // }
+};

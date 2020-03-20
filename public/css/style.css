@@ -10,6 +10,15 @@
     text-align: center;
 }
 
+.avatar {
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  margin-left: 1rem;
+}
+
+
 .logpic {
 	width:100px;
 	height:100px;
@@ -234,7 +243,6 @@ h4{
 
 .btn {
     font-size: 14px;
-    background-color: #fff;
     padding: 6px 12px;
     margin-bottom: 0;
     display: inline-block;
@@ -251,7 +259,25 @@ h4{
     user-select: none;
     background-image: none;
     border: 1px solid transparent;
-    margin-left: 5rem;
+}
+
+.btn-add {
+  background-color: #00FF00;
+  margin-top: 1rem;
+  width: 5rem;
+}
+
+.center-add {
+  text-align: center;
+}
+
+.btn-update {
+  background-color: aqua;
+}
+
+.btn-delete {
+  background-color: red;
+  margin-left: 2rem;
 }
 
 .daymode {
@@ -402,4 +428,21 @@ aside {
   width: 35%;
   margin: 1rem;
   background-color: #ffffff;
+}
+
+
+/* Database Management */
+.management_table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.management_td, .management_th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.mangement_tr:nth-child(even) {
+  background-color: #dddddd;
 }
