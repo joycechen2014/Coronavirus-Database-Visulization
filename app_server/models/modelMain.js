@@ -43,6 +43,8 @@ module.exports.post_register = function(req, res){
     })
     }
 }
+
+
 /*Post login */
 module.exports.post_login = function(req, res)
 {
@@ -71,4 +73,22 @@ module.exports.post_login = function(req, res)
          }
 
     });
+};
+
+
+/*
+ * GET management page.
+ */
+module.exports.get_management = function(req, res)
+{
+	
+    if(req.session.user === "admin"){
+		var db = req.db;
+		var collection = db.get('data');
+		collection.find({},{}, function(err, docs){
+			res.render('management', {"datalist": docs});
+		});
+    } else {
+        res.send("You need Admin privilege to get in Management page.")
+    }
 };
