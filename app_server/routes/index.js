@@ -39,6 +39,11 @@ router.get("/charts", ctrlMain.get_charts);
  */
 router.get("/download", ctrlMain.loggedIn, ctrlMain.get_download);
 
+/*
+ * GET management page.
+ */
+router.get("/management", ctrlMain.loggedIn, ctrlMain.get_management);
+
 module.exports = router;
 /**
  * http://usejsdoc.org/
