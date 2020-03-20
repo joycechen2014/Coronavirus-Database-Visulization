@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var ctrlMain = require("../controllers/main");
+var modelMain = require("../models/modelMain")
 
 /*
  * GET home page.
@@ -15,17 +16,13 @@ router.get("/register",ctrlMain.get_register);
 /*
  * POST registration page.
  */
-router.post("/register", ctrlMain.post_register);
+router.post("/register", modelMain.post_register);
 
-/*
- * GET login page.
- */
-//router.get("/login", ctrlMain.get_login);
 
 /*
  * POST login page.
  */
-router.post("/login", ctrlMain.post_login);
+router.post("/login", modelMain.post_login);
 
 /*
  * GET logout page.

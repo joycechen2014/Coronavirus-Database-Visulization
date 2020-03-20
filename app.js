@@ -18,7 +18,22 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "./public")));
 app.use(session({ secret: "String for encrypting cookies." }));
 
+var mongo = require('mongodb');
+var monk = require('monk');
 
+var db = monk(`connectionstring`);
+var db = monk('mongodb+srv://cmpe280-backup-4c9xo.mongodb.net/Coronavirus?retryWrites=true&w=majority', {
+	  username : 'backup',
+	  password : 'backup'
+});
+
+
+//Make the database accessible to the router.
+  app.use(function(req, res, next)
+  {
+      req.db = db;
+      next();
+  });
 app.use("/", index);
 
 module.exports = app;
