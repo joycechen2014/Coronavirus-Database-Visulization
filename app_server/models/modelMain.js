@@ -60,7 +60,7 @@ module.exports.post_login = function(req, res)
              if(docs) {
                  console.log("Sucessfully logged in:");
                  req.session.user = req.body.username;
-                 console.log(req.session.user.username);
+                 console.log(req.session.user);
                  res.render('loggedin',
                             { name: req.session.user.username });
             	 
