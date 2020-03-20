@@ -54,7 +54,7 @@ module.exports.get_register = function(req, res)
 
 /*
  * POST registration page.
- */
+
 module.exports.post_register = function(req, res)
 {
     if(!req.body.username)
@@ -65,11 +65,12 @@ module.exports.post_register = function(req, res)
     	res.render('/register', {message: "Password can not be empty!"});
     }
     else {
+    	/*
         // Create an array of users with matching usernames.
         var matches = registeredUsers.filter(function(user)
-                      {
-                          return user.username === req.body.username;
-                      });
+        {
+            return user.username === req.body.username;
+        });
 
         // If there is a match, the user has already registered.
         if (matches.length > 0)
@@ -77,7 +78,9 @@ module.exports.post_register = function(req, res)
         	res.render('register', {message: "User already registered!"});
 
         }
-
+         
+    	
+    	
         // Register a new user.
         else
         {
@@ -91,7 +94,7 @@ module.exports.post_register = function(req, res)
         }
     }
 };
-
+*/
 /*
  * GET login page.
  */
