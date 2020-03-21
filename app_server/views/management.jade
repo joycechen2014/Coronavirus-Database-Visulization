@@ -30,8 +30,26 @@ html(lang='zh')
     .center-add
       button.btn.btn-add ADD
 
-    
-
+    div
+        form(action='management', method='POST')
+          label(for='fname') Country:
+          br
+          input#fname(type='text', name='countryname', placeholder='Country', required='')
+          br
+          label(for='lname') Total:
+          br
+          input#lname(type='number', name='totalnumber', placeholder='Total Number', required='')
+          br
+          label(for='fname') New:
+          br
+          input#fname(type='number', name='newnumber', placeholder='New cases', required='')
+          br
+          label(for='lname') Date:
+          br
+          input#lname(type='date', name='date', placeholder='Date', required='')
+          br
+          br
+          input(type='submit', value='Add')
 
 
 

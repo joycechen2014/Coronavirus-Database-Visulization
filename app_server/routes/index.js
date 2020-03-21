@@ -44,6 +44,11 @@ router.get("/download", ctrlMain.loggedIn, ctrlMain.get_download);
  */
 router.get("/management", ctrlMain.loggedIn, modelMain.get_management);
 
+/*
+ * POST management page.
+ */
+router.post("/management", ctrlMain.loggedIn, modelMain.post_management);
+
 module.exports = router;
 /**
  * http://usejsdoc.org/
