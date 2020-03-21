@@ -27,29 +27,33 @@ html(lang='zh')
             td.management_td 
               button.btn.btn-update UPDATE
               button.btn.btn-delete DELETE
-    .center-add
-      button.btn.btn-add ADD
+  
 
-    div
+    
+    h2 Add New Coronavirus Data
+    div.addForm
         form(action='management', method='POST')
-          label(for='fname') Country:
+          label.addFormOther(for='country') Country:
           br
-          input#fname(type='text', name='countryname', placeholder='Country', required='')
+          input#country(type='text', name='countryname', placeholder='Country', required='')
           br
-          label(for='lname') Total:
+          label.addFormOther(for='total') Total:
           br
-          input#lname(type='number', name='totalnumber', placeholder='Total Number', required='')
-          br
-          label(for='fname') New:
-          br
-          input#fname(type='number', name='newnumber', placeholder='New cases', required='')
-          br
-          label(for='lname') Date:
-          br
-          input#lname(type='date', name='date', placeholder='Date', required='')
+          input.addFormOther(type='number', name='totalnumber', placeholder='Total Number', required='')
           br
           br
-          input(type='submit', value='Add')
+          label.addFormOther(for='new') New:
+          br
+          input.addFormOther(type='number', name='newnumber', placeholder='New cases', required='')
+          br
+          br
+          label.addFormOther(for='date') Date:
+          br
+          input.addFormOther(type='date', name='date', placeholder='Date', required='')
+          br
+          input#addButton(type='submit', value='Add')
+          br
+          br
 
 
 
