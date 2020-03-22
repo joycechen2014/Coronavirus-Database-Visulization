@@ -200,6 +200,27 @@ module.exports.put_management = async function (req, res) {
 		}
 };
 
+/*
+ * DELETE data from management page.
+ */
+module.exports.delete_management = async function (req, res) {
+  console.log("Start deleting");
+  var db = req.db;
+  var collection = db.get("data");
+  let datalist = await collection.find();
+  var db = req.db;
+  var id = req.body.id;
+  console.log(req.body)
+  try {
+   await collection.findOneAndDelete({ _id: id });
+   console.log("Data delete Successfully");
+   let datalist = await collection.find();
+   res.render("management", { datalist: datalist });
+  } catch (e) {
+   console.error(e);
+   res.send('Server Error')
+  }
+};
 
 
 
