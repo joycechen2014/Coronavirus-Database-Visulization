@@ -2,14 +2,17 @@ doctype html
 html(lang='zh')
   head
     meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css') 
+    link(rel='stylesheet' href='/resources/demos/style.css')
+    script(src='https://code.jquery.com/jquery-1.12.4.js') 
+    script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
     title Database Management
     style
       include ../../public/css/style.css
 
   body
-    include ../../menus/menus.html
     h2 Coronavirus Database Management
     table.management_table
       tbody
@@ -28,40 +31,56 @@ html(lang='zh')
             td.management_td 
               button.btn.btn-update UPDATE
               button.btn.btn-delete DELETE
-  
+    .center-add
+      button.btn.btn-add ADD
 
-    
-    h2 Add New Coronavirus Data
-    div.addForm
-        form(action='management', method='POST')
-          label.addFormOther(for='country') Country:
-          br
-          input#country(type='text', name='countryname', placeholder='Country', required='')
-          br
-          label.addFormOther(for='total') Total:
-          br
-          input.addFormOther(type='number', name='totalnumber', placeholder='Total Number', required='')
-          br
-          br
-          label.addFormOther(for='new') New:
-          br
-          input.addFormOther(type='number', name='newnumber', placeholder='New cases', required='')
-          br
-          br
-          label.addFormOther(for='date') Date:
-          br
-          input.addFormOther(type='date', name='date', placeholder='Date', required='')
-          br
-          input#addButton(type='submit', value='Add')
-          br
-          br
+    div(id="dialog-form")
+      form(action='management' method='POST')
+        label Country:
+        br
+        input(type='text' name='countryname' placeholder='Country' required='')
+        br
+        label Total:
+        br
+        input(type='number' name='totalnumber' placeholder='Total Number' required='')
+        br
+        label New:
+        br
+        input(type='number' name='newnumber' placeholder='New cases' required='')
+        br
+        label Date:
+        br
+        input(type='date' name='date' placeholder='Date' required='')
+        br
+        br
+        input(type='submit' value='Add')
+
+      script.
+        $(function(){
+          var dialog, form;
+          dialog = $("#dialog-form").dialog({
+            autoOpen:false,
+            //- heigth:400,
+            //- width:350,
+            modal:true,
+            close: function(){}
+          });
+          $(".btn-add").button().on('click', function(){
+            dialog.dialog( "open" );
+          });
+          $(".btn-update").button().on('click', function(){
+            debugger
+            dialog.dialog( "open" );
+          });
+        })
+
+
+ 
 
 
 
 
 
 
-
-      
 
 
