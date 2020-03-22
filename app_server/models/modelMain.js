@@ -68,6 +68,20 @@ module.exports.post_login = function (req, res) {
 };
 
 /*
+ * GET charts page.
+ */
+module.exports.get_charts= function(req, res)
+{
+	var db = req.db;
+	var collection = db.get("data");
+	let docs = collection.find();
+	console.log("get_charts data:");
+	console.log(docs);
+	res.render("charts", { datalist: docs });
+};
+
+
+/*
  * GET management page.
  */
 module.exports.get_management = function (req, res) {
@@ -116,7 +130,7 @@ module.exports.post_management = async function (req, res) {
 		var newnum = req.body.newnumber;
 		var dt = req.body.date;
 
-		let doc = await collection.findOne({ 'country': country });
+		let doc = await collection.findOne({ 'country': country, 'dt': dt });
 		if (doc) {
 			res.render("management", {
 				datalist: datalist,

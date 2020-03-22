@@ -32,7 +32,7 @@ router.get("/logout", ctrlMain.get_logout);
 /*
  * GET charts page.
  */
-router.get("/charts", ctrlMain.get_charts);
+router.get("/charts", modelMain.get_charts);
 
 /*
  * GET download page.

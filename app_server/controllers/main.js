@@ -165,13 +165,6 @@ module.exports.get_logout = function(req, res)
     }
 };
 
-/*
- * GET charts page.
- */
-module.exports.get_charts= function(req, res)
-{
-  res.render('charts');
-};
 
 /*
  * GET download page.
