@@ -30,11 +30,12 @@ html(lang='zh')
             td.management_td #{data.dt}
             td.management_td 
               button.btn.btn-update(value="#{data._id}") UPDATE
+            td.management_td
               button.btn.btn-delete(value="#{data._id}") DELETE
     .center-add
       button.btn.btn-add ADD
 
-    div(id="dialog-form")
+    div(id="dialog-form1")
       form(action='management' method='POST')
         label Country:
         br
@@ -55,10 +56,38 @@ html(lang='zh')
         br
         input(type='submit' value='Add')
 
+    div(id="dialog-form2")
+      form(action='update' method='POST')
+        input(type='text' name='id' style="display:none")
+        label Country:
+        br
+        input(type='text' name='countryname' placeholder='Country' required='')
+        br
+        label Total:
+        br
+        input(type='number' name='totalnumber' placeholder='Total Number' required='')
+        br
+        label New:
+        br
+        input(type='number' name='newnumber' placeholder='New cases' required='')
+        br
+        label Date:
+        br
+        input(type='date' name='date' placeholder='Date' required='')
+        br
+        br
+        input(type='submit' value='UPDATE')
+
+    div(id="dialog-confirm")
+      form(action='delete' method='post')
+        label These data will be permanently deleted and cannot be recovered. Are you sure?
+        input(type='text' name='id' style="display:none")
+        input(type='submit' value='DELETE')
+
       script.
         $(function(){
           var dialog, form;
-          dialog = $("#dialog-form").dialog({
+          dialog = $("#dialog-form1").dialog({
             autoOpen:false,
             modal:true,
             close: function(){}
@@ -66,9 +95,26 @@ html(lang='zh')
           $(".btn-add").button().on('click', function(){
             dialog.dialog( "open" );
           });
+        })
+        $(function(){
+          var dialog, form;
+          dialog = $("#dialog-form2").dialog({
+            autoOpen:false,
+            modal:true,
+            close: function(){}
+          });
           $(".btn-update").button().on('click', function(){
             dialog.dialog( "open" );
-
+            var countryname = $(this).parents("tr").find("td").eq(0).text();
+            var totalnum = $(this).parents("tr").find("td").eq(1).text();
+            var newnum = $(this).parents("tr").find("td").eq(2).text();
+            var date = $(this).parents("tr").find("td").eq(3).text();
+            var id = $(this).parents("tr").find("td").eq(4).find('.btn-update').val();
+            $("input[name=countryname]").val(countryname);
+            $("input[name=totalnumber]").val(totalnum);
+            $("input[name=newnumber]").val(newnum);
+            $("input[name=date]").val(date);
+            $("input[name=id]").val(id);
           });
         })
 

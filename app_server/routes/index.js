@@ -49,6 +49,16 @@ router.get("/management", ctrlMain.loggedIn, modelMain.get_management);
  */
 router.post("/management", ctrlMain.loggedIn, modelMain.post_management);
 
+/*
+ * UPDATE data of management page.
+ */
+router.post("/update", ctrlMain.loggedIn, modelMain.put_management);
+
+/*
+ * DELETE data from management page.
+ */
+router.post("/delete", ctrlMain.loggedIn, modelMain.delete_management);
+
 module.exports = router;
 /**
  * http://usejsdoc.org/

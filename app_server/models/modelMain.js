@@ -143,3 +143,63 @@ module.exports.post_management = async function (req, res) {
 		}
 	}
 };
+
+
+/*
+ * UPDATE data of management page.
+ */
+module.exports.put_management = async function (req, res) {
+	console.log("Start updating");
+	var db = req.db;
+	var collection = db.get("data");
+	let datalist = await collection.find();
+	if (!req.body.countryname) {
+		res.render("management", {
+			datalist: datalist,
+			message: "Country Name can not be empty!"
+		});
+	} else if (!req.body.totalnumber) {
+		res.render("management", {
+			datalist: datalist,
+			message: "Total Number can not be empty!"
+		});
+	} else if (!req.body.newnumber) {
+		res.render("management", {
+			datalist: datalist,
+			message: "New Number can not be empty!"
+		});
+	} else if (!req.body.date) {
+		res.render("management", {
+			datalist: datalist,
+			message: "Date can not be empty!"
+		});
+	} else {
+		var db = req.db;
+		var country = req.body.countryname;
+		var totalnum = req.body.totalnumber;
+		var newnum = req.body.newnumber;
+		var dt = req.body.date;
+		var id = req.body.id;
+		console.log("Data update");
+		console.log(req.body)
+		try {
+			await collection.findOneAndUpdate({ _id: id }, {$set:{
+				country: country,
+				total: totalnum,
+				new: newnum,
+				dt: dt
+			}});
+			console.log("Data update Successfully");
+			let datalist = await collection.find();
+			res.render("management", { datalist: datalist });
+		} catch (e) {
+			console.error(e);
+			res.send('Server Error')
+		}
+		
+		}
+};
+
+
+
+
