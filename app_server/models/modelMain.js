@@ -75,8 +75,6 @@ module.exports.get_charts= function(req, res)
 	var db = req.db;
 	var collection = db.get("data");
 	let docs = collection.find();
-	console.log("get_charts data:");
-	console.log(docs);
 	res.render("charts", { datalist: docs });
 };
 
