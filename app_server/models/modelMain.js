@@ -129,56 +129,19 @@ module.exports.post_management = async function (req, res) {
 		var totalnum = req.body.totalnumber;
 		var newnum = req.body.newnumber;
 		var dt = req.body.date;
-
-		let doc = await collection.findOne({ 'country': country, 'dt': dt });
-		if (doc) {
-			res.render("management", {
-				datalist: datalist,
-				message: "Data of this country already showed above!"
+		try {
+			await collection.insert({
+				country: country,
+				total: totalnum,
+				new: newnum,
+				dt: dt
 			});
-		} else {
-			try {
-				await collection.insert({
-					country: country,
-					total: totalnum,
-					new: newnum,
-					dt: dt
-				});
-				console.log("New data set added Successfully");
-				let datalist = await collection.find();
-				res.render("management", { datalist: datalist });
-
-			} catch (e) {
-				console.error(e);
-				res.send('Server Error')
-			}
+			console.log("New data set added Successfully");
+			let datalist = await collection.find();
+			res.render("management", { datalist: datalist });
+		} catch (e) {
+			console.error(e);
+			res.send('Server Error')
 		}
-		// collection.findOne({ country: country }, function (err, docs) {
-		// 	if (err) {
-		// 		res.send("find wrong");
-		// 	} else {
-		// 		if (docs) {
-		// 			res.render("management", {
-		// 				message: "Data of this country already showed above!"
-		// 			});
-		// 		} else {
-		// 			collection.insert(
-		// 				{
-		// 					country: country,
-		// 					total: totalnum,
-		// 					new: newnum,
-		// 					dt: dt
-		// 				},
-		// 				async function (err, doc) {
-		// 					if (err) throw err;
-		// 					console.log("New data set added Successfully");
-		// 					let datalist = await collection.find();
-
-		// 					res.render("management", { datalist: datalist });
-		// 				}
-		// 			);
-		// 		}
-		// 	}
-		// });
 	}
 };
