@@ -441,30 +441,3 @@ aside {
   background-color: #dddddd;
 }
 
-.addForm{
-  position: relative;
-  border-style: solid;
-  border-color: black;
-  color:black;
-  width: 30%;
-  left: 580px;
-}
-
-#country{
-  position: relative;
-  left: 115px;
-  border-style:groove;
-  color:black;
-  width: 50%;
-}
-#addButton{
-  position: relative;
-  left: 160px;
-  width: 30%;
-}
-
-.addFormOther{
-  position: relative;
-  left: 120px;
-  width: 50%;
-}
