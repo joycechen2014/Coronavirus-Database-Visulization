@@ -60,8 +60,6 @@ html(lang='zh')
           var dialog, form;
           dialog = $("#dialog-form").dialog({
             autoOpen:false,
-            //- heigth:400,
-            //- width:350,
             modal:true,
             close: function(){}
           });
@@ -69,8 +67,8 @@ html(lang='zh')
             dialog.dialog( "open" );
           });
           $(".btn-update").button().on('click', function(){
-            debugger
             dialog.dialog( "open" );
+
           });
         })
 
