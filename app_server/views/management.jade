@@ -15,9 +15,6 @@ html(lang='zh')
   body
     include ../../menus/menus.html
     h2 Coronavirus Database Management
-    //- .center-add
-    //-   button.btn.btn-load LOAD RECORD
-    //-   button.btn.btn-add ADD RECORD
     .center-add
       form(action="/management/load", method="POST")
         button(type="submit").btn.btn-load LOAD RECORD
@@ -26,9 +23,10 @@ html(lang='zh')
       tbody
         tr.mangement_tr
           th.management_th Country
+          th.management_th Date
+          th.management_th Type
           th.management_th Total
           th.management_th New
-          th.management_th Date
           th.management_th Operation
         each data in datalist
           tr.mangement_tr
