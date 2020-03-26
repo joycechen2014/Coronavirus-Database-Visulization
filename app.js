@@ -3,7 +3,6 @@ var path = require("path");
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var session = require("express-session");
-var lineReader = require("line-reader");
 var index = require("./app_server/routes/index");
 
 var app = express();
@@ -20,6 +19,9 @@ app.use(session({ secret: "String for encrypting cookies." }));
 
 var mongo = require('mongodb');
 var monk = require('monk');
+// var lineReader = require('line-reader');
+var fs = require("fs");
+var readline = require("readline");
 
 var db = monk(`connectionstring`);
 var db = monk('mongodb+srv://cmpe280-backup-4c9xo.mongodb.net/Coronavirus?retryWrites=true&w=majority', {
@@ -28,10 +30,14 @@ var db = monk('mongodb+srv://cmpe280-backup-4c9xo.mongodb.net/Coronavirus?retryW
 });
 
 
+
 //Make the database accessible to the router.
   app.use(function(req, res, next)
   {
       req.db = db;
+      req.readline = readline;
+      req.fs = fs;
+      // req.lineReader = lineReader;
       next();
   });
 app.use("/", index);

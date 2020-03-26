@@ -13,7 +13,15 @@ html(lang='zh')
       include ../../public/css/style.css
 
   body
+    include ../../menus/menus.html
     h2 Coronavirus Database Management
+    //- .center-add
+    //-   button.btn.btn-load LOAD RECORD
+    //-   button.btn.btn-add ADD RECORD
+    .center-add
+      form(action="/management/load", method="POST")
+        button(type="submit").btn.btn-load LOAD RECORD
+      button.btn.btn-add ADD RECORD
     table.management_table
       tbody
         tr.mangement_tr
@@ -25,14 +33,13 @@ html(lang='zh')
         each data in datalist
           tr.mangement_tr
             td.management_td #{data.country}
-            td.management_td #{data.total}
-            td.management_td #{data.new}
             td.management_td #{data.dt}
+            td.management_td #{data.type}
+            td.management_td #{data.totalCases}
+            td.management_td #{data.newCases}
             td.management_td 
               button.btn.btn-update(value="#{data._id}") UPDATE
               button.btn.btn-delete(value="#{data._id}") DELETE
-    .center-add
-      button.btn.btn-add ADD
 
     div(id="dialog-form1")
       form(action='management' method='POST')
