@@ -489,3 +489,11 @@ aside {
 .mangement_tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+#namecolor{
+  color: rgb(0,0,0);
+}
+
+#typecolor{
+  color: rgb(0,0,0);
+}
