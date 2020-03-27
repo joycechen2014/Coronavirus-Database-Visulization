@@ -214,8 +214,6 @@ module.exports.delete_management = async function (req, res) {
   console.log("Start deleting");
   var db = req.db;
   var collection = db.get("data");
-//   let datalist = await collection.find();
-  var db = req.db;
   var id = req.body.id;
   console.log(req.body)
   try {
@@ -277,4 +275,23 @@ module.exports.load_management = function (req, res) {
 
 };
 
+
+/*
+ * SEARCH data from management page.
+ */
+module.exports.search_management = async function (req, res) {
+	console.log("Start searching");
+	var db = req.db;
+	var collection = db.get("data");
+	var type = req.params.type;
+	console.log(req.params)
+	try {
+		let datalist = await collection.find({ type: type});
+		console.log("Data search Successfully");
+		res.render("management", { datalist: datalist });
+	} catch (e) {
+		console.error(e);
+		res.send('Server Error')
+	}
+};
 

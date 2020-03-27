@@ -65,9 +65,9 @@ router.post("/management/update", ctrlMain.loggedIn, modelMain.update_management
 router.post("/management/delete", ctrlMain.loggedIn, modelMain.delete_management);
 
 /*
- * DELETE data from management page.
+ * SEARCH data from management page.
  */
-router.get("/management/search", ctrlMain.loggedIn, modelMain.delete_management);
+router.get("/management/:type", ctrlMain.loggedIn, modelMain.search_management);
 
 
 module.exports = router;

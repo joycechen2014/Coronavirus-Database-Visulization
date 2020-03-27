@@ -98,11 +98,7 @@ html(lang='zh')
         input(type='submit' value='DELETE')
 
     div(id="dialog-form3")
-      form(action='search' method='POST')
-        label Date:
-        br
-        input(type='date' name='date' placeholder='Date' required='')
-        br
+      form(action='/management/:type' method='POST')
         label Type:
         br
         input(type='text' name='type' placeholder='Type' required='')
@@ -168,6 +164,11 @@ html(lang='zh')
           $(".btn-search").button().on('click', function(){
             dialog.dialog( "open" );
           });
+
+          $("#dialog-form3").submit( function(e){
+            e.preventDefault();
+            window.open(`${window.location.origin}/management/${$("#dialog-form3 input[name=type]").val()}`,'_self')
+          })
         })
 
 
