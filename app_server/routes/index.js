@@ -50,9 +50,10 @@ router.get("/management", ctrlMain.loggedIn, modelMain.get_management);
 router.post("/management/add", ctrlMain.loggedIn, modelMain.add_management);
 
 /*
- * Load data of management page.
+ * POST Load data of management page.
  */
 router.post("/management/load", ctrlMain.loggedIn, modelMain.load_management);
+
 
 /*
  * UPDATE data of management page.
