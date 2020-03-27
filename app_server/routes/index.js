@@ -45,9 +45,9 @@ router.get("/download", ctrlMain.loggedIn, ctrlMain.get_download);
 router.get("/management", ctrlMain.loggedIn, modelMain.get_management);
 
 /*
- * POST management page.
+ * ADD data to management page.
  */
-router.post("/management", ctrlMain.loggedIn, modelMain.post_management);
+router.post("/management/add", ctrlMain.loggedIn, modelMain.add_management);
 
 /*
  * Load data of management page.
@@ -57,12 +57,18 @@ router.post("/management/load", ctrlMain.loggedIn, modelMain.load_management);
 /*
  * UPDATE data of management page.
  */
-router.post("/update", ctrlMain.loggedIn, modelMain.put_management);
+router.post("/management/update", ctrlMain.loggedIn, modelMain.update_management);
 
 /*
  * DELETE data from management page.
  */
-router.post("/delete", ctrlMain.loggedIn, modelMain.delete_management);
+router.post("/management/delete", ctrlMain.loggedIn, modelMain.delete_management);
+
+/*
+ * DELETE data from management page.
+ */
+router.get("/management/search", ctrlMain.loggedIn, modelMain.delete_management);
+
 
 module.exports = router;
 

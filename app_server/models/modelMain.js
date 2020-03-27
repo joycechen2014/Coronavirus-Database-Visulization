@@ -95,9 +95,9 @@ module.exports.get_management = function (req, res) {
 };
 
 /*
- * POST management page.
+ * ADD data to management page.
  */
-module.exports.post_management = async function (req, res) {
+module.exports.add_management = async function (req, res) {
 	var db = req.db;
 	var collection = db.get("data");
 	let datalist = await collection.find();
@@ -152,7 +152,7 @@ module.exports.post_management = async function (req, res) {
 /*
  * UPDATE data of management page.
  */
-module.exports.put_management = async function (req, res) {
+module.exports.update_management = async function (req, res) {
 	console.log("Start updating");
 	var db = req.db;
 	var collection = db.get("data");

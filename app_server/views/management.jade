@@ -19,6 +19,7 @@ html(lang='zh')
       form(action="/management/load", method="POST")
         button(type="submit").btn.btn-load LOAD RECORD
       button.btn.btn-add ADD RECORD
+        button.btn.btn-search SEARCH
     table.management_table
       tbody
         tr.mangement_tr
@@ -40,7 +41,7 @@ html(lang='zh')
               button.btn.btn-delete(value="#{data._id}") DELETE
 
     div(id="dialog-form1")
-      form(action='management' method='POST')
+      form(action='/management/add' method='POST')
         label Country:
         br
         input(type='text' name='countryname' placeholder='Country' required='')
@@ -65,7 +66,7 @@ html(lang='zh')
         input(type='submit' value='Add')
 
     div(id="dialog-form2")
-      form(action='update' method='POST')
+      form(action='/management/update' method='POST')
         input(type='text' name='id' style="display:none")
         label Country:
         br
@@ -91,10 +92,23 @@ html(lang='zh')
         input(type='submit' value='UPDATE')
 
     div(id="dialog-confirm")
-      form(action='delete' method='post')
+      form(action='/management/delete' method='post')
         label These data will be permanently deleted and cannot be recovered. Are you sure?
         input(type='text' name='id' style="display:none")
         input(type='submit' value='DELETE')
+
+    div(id="dialog-form3")
+      form(action='search' method='POST')
+        label Date:
+        br
+        input(type='date' name='date' placeholder='Date' required='')
+        br
+        label Type:
+        br
+        input(type='text' name='type' placeholder='Type' required='')
+        br
+        br
+        input(type='submit' value='search')
 
       script.
         $(function(){
@@ -130,8 +144,7 @@ html(lang='zh')
             $("input[name=newnumber]").val(newnum);
             $("input[name=id]").val(id);
           });
-        })
-        
+        }) 
         $(function(){
           var dialog;
           dialog = $("#dialog-confirm").dialog({
@@ -143,6 +156,17 @@ html(lang='zh')
             dialog.dialog( "open" );
             var id = $(this).parents("tr").find("td").eq(5).find('.btn-delete').val();
             $("input[name=id]").val(id);
+          });
+        })
+        $(function(){
+          var dialog, form;
+          dialog = $("#dialog-form3").dialog({
+            autoOpen:false,
+            modal:true,
+            close: function(){}
+          });
+          $(".btn-search").button().on('click', function(){
+            dialog.dialog( "open" );
           });
         })
 
