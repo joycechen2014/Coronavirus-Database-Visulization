@@ -176,17 +176,20 @@ module.exports.put_management = async function (req, res) {
 	} else {
 		var db = req.db;
 		var country = req.body.countryname;
+		var dt = req.body.date;
+		var type = req.body.type;
 		var totalnum = req.body.totalnumber;
 		var newnum = req.body.newnumber;
-		var dt = req.body.date;
 		var id = req.body.id;
 		console.log("Data update");
 		console.log(req.body)
 		try {
 			await collection.findOneAndUpdate({ _id: id }, {$set:{
 				country: country,
-				total: totalnum,
-				new: newnum,
+				dt: dt,
+				type: type,
+				totalCases: totalnum,
+				newCases: newnum,
 				dt: dt
 			}});
 			console.log("Data update Successfully");
