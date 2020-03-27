@@ -124,14 +124,18 @@ module.exports.post_management = async function (req, res) {
 	} else {
 		var db = req.db;
 		var country = req.body.countryname;
+		var dt = req.body.date;
+		var type = req.body.type;
 		var totalnum = req.body.totalnumber;
 		var newnum = req.body.newnumber;
-		var dt = req.body.date;
+		var id = req.body.id;
 		try {
 			await collection.insert({
 				country: country,
-				total: totalnum,
-				new: newnum,
+				dt: dt,
+				type: type,
+				totalCases: totalnum,
+				newCases: newnum,
 				dt: dt
 			});
 			console.log("New data set added Successfully");
