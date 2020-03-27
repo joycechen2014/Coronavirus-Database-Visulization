@@ -233,7 +233,7 @@ module.exports.delete_management = async function (req, res) {
 /*
  * Load data from management page.
  */
-module.exports.load_management = function (req, res) {
+module.exports.load_management = async function (req, res) {
 	console.log("Start loading");
 	var db = req.db;
 	var collection = db.get("data");
@@ -243,7 +243,7 @@ module.exports.load_management = function (req, res) {
 	console.log("remove old record");
 	collection.remove({});
 
-	var reader = readline.createInterface({
+	var reader = await readline.createInterface({
 		input: fs.createReadStream('public/data/us-covid-19-case.csv')
 	});
 	reader.on('line', (line) => {
@@ -255,7 +255,7 @@ module.exports.load_management = function (req, res) {
 		var newCases = Number(line.split(",")[3]);
 		var _id = 0;
 
-		collection.insert(
+		 collection.insert(
 		{
 			"country": country,
 			"dt" : dt,
@@ -265,14 +265,14 @@ module.exports.load_management = function (req, res) {
 		},
 			function (err, doc) {
 				if (err) throw err;
-				console.log("Record inserted Successfully");
+				//console.log("Record inserted Successfully");
 		});		
 	});
 	reader.on('close', () => {
 		console.log("File Closed");
 	});
 	
-	let datalist = collection.find();
+	let datalist = await collection.find();
 	res.render("management", { datalist: datalist });
 
 };
