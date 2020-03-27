@@ -106,6 +106,16 @@ module.exports.add_management = async function (req, res) {
 			datalist: datalist,
 			message: "Country Name can not be empty!"
 		});
+	} else if (!req.body.date) {
+		res.render("management", {
+			datalist: datalist,
+			message: "Date can not be empty!"
+		});
+	} else if (!req.body.type) {
+		res.render("management", {
+			datalist: datalist,
+			message: "Type can not be empty!"
+		});
 	} else if (!req.body.totalnumber) {
 		res.render("management", {
 			datalist: datalist,
@@ -115,11 +125,6 @@ module.exports.add_management = async function (req, res) {
 		res.render("management", {
 			datalist: datalist,
 			message: "New Number can not be empty!"
-		});
-	} else if (!req.body.date) {
-		res.render("management", {
-			datalist: datalist,
-			message: "Date can not be empty!"
 		});
 	} else {
 		var db = req.db;
@@ -162,6 +167,16 @@ module.exports.update_management = async function (req, res) {
 			datalist: datalist,
 			message: "Country Name can not be empty!"
 		});
+	} else if (!req.body.date) {
+		res.render("management", {
+			datalist: datalist,
+			message: "Date can not be empty!"
+		});
+	} else if (!req.body.type) {
+		res.render("management", {
+			datalist: datalist,
+			message: "Type can not be empty!"
+		});
 	} else if (!req.body.totalnumber) {
 		res.render("management", {
 			datalist: datalist,
@@ -172,12 +187,7 @@ module.exports.update_management = async function (req, res) {
 			datalist: datalist,
 			message: "New Number can not be empty!"
 		});
-	} else if (!req.body.date) {
-		res.render("management", {
-			datalist: datalist,
-			message: "Date can not be empty!"
-		});
-	} else {
+	}  else {
 		var db = req.db;
 		var country = req.body.countryname;
 		var dt = req.body.date;
