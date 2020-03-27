@@ -147,9 +147,8 @@ module.exports.add_management = async function (req, res) {
 				dt: dt
 			});
 			console.log("New data set added Successfully");
-			// let datalist = await collection.find();
-			// res.render("management", { datalist: datalist });
-			res.redirect('/management');
+			let datalist = await collection.find({}, {sort: {dt: -1}});
+   			res.render("management", { datalist: datalist });
 		} catch (e) {
 			console.error(e);
 			res.send('Server Error')
@@ -233,7 +232,7 @@ module.exports.delete_management = async function (req, res) {
   try {
    await collection.findOneAndDelete({ _id: id });
    console.log("Data delete Successfully");
-   let datalist = await collection.find();
+   let datalist = await collection.find({}, {sort: {dt: -1}});
    res.render("management", { datalist: datalist });
   } catch (e) {
    console.error(e);
@@ -274,9 +273,10 @@ module.exports.load_management = function (req, res) {
 					}
 				);	
 		};
-		// let datalist = await collection.find();
-		// res.render("management", { datalist: datalist });
-		res.redirect('/management');
+		let datalist = await collection.find({}, {sort: {dt: -1}});
+		res.render("management", { datalist: datalist });
+		// res.redirect("/management");
+		
 		
 	});
 
