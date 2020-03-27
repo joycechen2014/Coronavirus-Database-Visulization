@@ -491,9 +491,28 @@ aside {
 }
 
 #namecolor{
+  position: relative;
   color: rgb(0,0,0);
+  border:ridge;
+  width:62%;
+  height: 20px;
+  left: -5px;
+}
+
+
+.otherformat{
+  color: rgb(0,0,0);
+  border:ridge;
+  width:60%;
+  height: 20px;
+  
 }
 
 #typecolor{
+  position: relative;
   color: rgb(0,0,0);
+  border:ridge;
+  width:62%;
+  height: 20px;
+  left: -5px;
 }

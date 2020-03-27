@@ -49,23 +49,23 @@ html(lang='zh')
       form(action='/management/add' method='POST')
         label Country:
         br
-        input(type='text' name='countryname' placeholder='Country' required='')
+        input#namecolor(type='text' name='countryname' placeholder='Country' required='')
         br
         label Date:
         br
-        input(type='date' name='date' placeholder='Date' required='')
+        input.otherformat(type='date' name='date' placeholder='Date' required='')
         br
         label Type:
         br
-        input(type='text' name='type' placeholder='Type' required='')
+        input#typecolor(type='text' name='type' placeholder='Type' required='')
         br
         label Total:
         br
-        input(type='number' name='totalnumber' placeholder='Total Number' required='')
+        input.otherformat(type='number' name='totalnumber' placeholder='Total Number' required='')
         br
         label New:
         br
-        input(type='number' name='newnumber' placeholder='New cases' required='')
+        input.otherformat(type='number' name='newnumber' placeholder='New cases' required='')
         br
         br
         input(type='submit' value='Add')
@@ -79,7 +79,7 @@ html(lang='zh')
         br
         label Date:
         br
-        input(type='date' name='date' placeholder='Date' required='')
+        input.otherformat(type='date' name='date' placeholder='Date' required='')
         br
         label Type:
         br
@@ -87,11 +87,11 @@ html(lang='zh')
         br
         label Total:
         br
-        input(type='number' name='totalnumber' placeholder='Total Number' required='')
+        input.otherformat(type='number' name='totalnumber' placeholder='Total Number' required='')
         br
         label New:
         br
-        input(type='number' name='newnumber' placeholder='New cases' required='')
+        input.otherformat(type='number' name='newnumber' placeholder='New cases' required='')
         br
         br
         input(type='submit' value='UPDATE')
@@ -106,7 +106,7 @@ html(lang='zh')
       form(action='/management/:type' method='POST')
         label Type:
         br
-        input(type='text' name='type' placeholder='Type' required='')
+        input#typecolor(type='text' name='type' placeholder='Type' required='')
         br
         br
         input(type='submit' value='search')
