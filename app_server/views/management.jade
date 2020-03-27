@@ -8,6 +8,10 @@ html(lang='zh')
     link(rel='stylesheet' href='/resources/demos/style.css')
     script(src='https://code.jquery.com/jquery-1.12.4.js') 
     script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+    script(src='../js/add.js')
+    script(src='../js/update.js')
+    script(src='../js/search.js')
+    script(src='../js/delete.js')
     title Database Management
     style
       include ../../public/css/style.css
@@ -106,71 +110,7 @@ html(lang='zh')
         br
         input(type='submit' value='search')
 
-      script.
-        $(function(){
-          var dialog, form;
-          dialog = $("#dialog-form1").dialog({
-            autoOpen:false,
-            modal:true,
-            close: function(){}
-          });
-          $(".btn-add").button().on('click', function(){
-            dialog.dialog( "open" );
-          });
-        })
-        $(function(){
-          var dialog, form;
-          dialog = $("#dialog-form2").dialog({
-            autoOpen:false,
-            modal:true,
-            close: function(){}
-          });
-          $(".btn-update").button().on('click', function(){
-            dialog.dialog( "open" );
-            var countryname = $(this).parents("tr").find("td").eq(0).text();
-            var date = $(this).parents("tr").find("td").eq(1).text();
-            var type = $(this).parents("tr").find("td").eq(2).text();
-            var totalnum = $(this).parents("tr").find("td").eq(3).text();
-            var newnum = $(this).parents("tr").find("td").eq(4).text();
-            var id = $(this).parents("tr").find("td").eq(5).find('.btn-update').val();
-            $("input[name=countryname]").val(countryname);
-            $("input[name=date]").val(date);
-            $("input[name=type]").val(type);
-            $("input[name=totalnumber]").val(totalnum);
-            $("input[name=newnumber]").val(newnum);
-            $("input[name=id]").val(id);
-          });
-        }) 
-        $(function(){
-          var dialog;
-          dialog = $("#dialog-confirm").dialog({
-          autoOpen:false,
-          modal: true,
-          close: function(){}
-          });
-          $(".btn-delete").button().on('click', function(){
-            dialog.dialog( "open" );
-            var id = $(this).parents("tr").find("td").eq(5).find('.btn-delete').val();
-            $("input[name=id]").val(id);
-          });
-        })
-        $(function(){
-          var dialog, form;
-          dialog = $("#dialog-form3").dialog({
-            autoOpen:false,
-            modal:true,
-            close: function(){}
-          });
-          $(".btn-search").button().on('click', function(){
-            dialog.dialog( "open" );
-          });
-
-          $("#dialog-form3").submit( function(e){
-            e.preventDefault();
-            window.open(`${window.location.origin}/management/${$("#dialog-form3 input[name=type]").val()}`,'_self')
-          })
-        })
-
+      
 
  
 
