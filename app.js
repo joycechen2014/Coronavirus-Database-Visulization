@@ -20,8 +20,10 @@ app.use(session({ secret: "String for encrypting cookies." }));
 var mongo = require('mongodb');
 var monk = require('monk');
 // var lineReader = require('line-reader');
-var fs = require("fs");
-var readline = require("readline");
+// var fs = require("fs");
+// var readline = require("readline");
+const csv = require('csv-parser')
+const fs = require('fs')
 
 var db = monk(`connectionstring`);
 var db = monk('mongodb+srv://cmpe280-backup-4c9xo.mongodb.net/Coronavirus?retryWrites=true&w=majority', {
@@ -35,7 +37,8 @@ var db = monk('mongodb+srv://cmpe280-backup-4c9xo.mongodb.net/Coronavirus?retryW
   app.use(function(req, res, next)
   {
       req.db = db;
-      req.readline = readline;
+      // req.readline = readline;
+      req.csv = csv;
       req.fs = fs;
       // req.lineReader = lineReader;
       next();

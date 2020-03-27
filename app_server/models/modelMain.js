@@ -86,7 +86,10 @@ module.exports.get_management = function (req, res) {
 	if (req.session.user === "admin") {
 		var db = req.db;
 		var collection = db.get("data");
-		collection.find({}, {}, function (err, docs) {
+		// let datalist = await collection.find({}).sort({dt: -1});
+		// res.render("management", { datalist: datalist });
+
+		collection.find({}, {sort: {dt : -1}}, function (err, docs) {
 			res.render("management", { datalist: docs });
 		});
 	} else {
@@ -144,8 +147,9 @@ module.exports.add_management = async function (req, res) {
 				dt: dt
 			});
 			console.log("New data set added Successfully");
-			let datalist = await collection.find();
-			res.render("management", { datalist: datalist });
+			// let datalist = await collection.find();
+			// res.render("management", { datalist: datalist });
+			res.redirect('/management');
 		} catch (e) {
 			console.error(e);
 			res.send('Server Error')
@@ -237,52 +241,48 @@ module.exports.delete_management = async function (req, res) {
   }
 };
 
-
 /*
- * Load data from management page.
+ * POST Load data from management page.
  */
-module.exports.load_management = async function (req, res) {
+module.exports.load_management = function (req, res) {
 	console.log("Start loading");
 	var db = req.db;
 	var collection = db.get("data");
 	var fs = req.fs;
-	var readline = req.readline;
+	var csv = req.csv;
 	
 	console.log("remove old record");
 	collection.remove({});
 
-	var reader = await readline.createInterface({
-		input: fs.createReadStream('public/data/us-covid-19-case.csv')
-	});
-	reader.on('line', (line) => {
-		console.log(line);
-		var country = 'US';
-		var dt = line.split(",")[0];
-		var type = line.split(",")[1];
-		var totalCases = Number(line.split(",")[2]);
-		var newCases = Number(line.split(",")[3]);
-		var _id = 0;
+	const dataset = [];
 
-		 collection.insert(
-		{
-			"country": country,
-			"dt" : dt,
-			"type": type,
-			"totalCases": totalCases,
-			"newCases": newCases,
-		},
-			function (err, doc) {
-				if (err) throw err;
-				//console.log("Record inserted Successfully");
-		});		
+	fs.createReadStream('public/data/us-covid-19-case.csv')
+		.pipe(csv())
+		.on('data', (data) => dataset.push(data))
+		.on('end', async () => {
+			for(let i = 0; i < dataset.length; i++){
+					 collection.insert(
+						{
+							"country": "US",
+							"dt" : dataset[i].Date,
+							"type": dataset[i].Type,
+							"totalCases": dataset[i].TotalCases,
+							"newCases": dataset[i].NewCases,
+						},function (err, doc) {
+							if (err) throw err;
+							console.log("Record inserted Successfully");
+					}
+				);	
+		};
+		// let datalist = await collection.find();
+		// res.render("management", { datalist: datalist });
+		res.redirect('/management');
+		
 	});
-	reader.on('close', () => {
-		console.log("File Closed");
-	});
+
+	// res.send("Finish to load");
+
 	
-	let datalist = await collection.find();
-	res.render("management", { datalist: datalist });
-
 };
 
 

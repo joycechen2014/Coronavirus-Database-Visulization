@@ -53,57 +53,6 @@ module.exports.get_register = function(req, res)
 };
 
 /*
- * POST registration page.
-
-module.exports.post_register = function(req, res)
-{
-    if(!req.body.username)
-    {
-    	res.render('/register' ,{message: "Username can not be empty!"});
-    }
-    else if (!req.body.password) {
-    	res.render('/register', {message: "Password can not be empty!"});
-    }
-    else {
-    	/*
-        // Create an array of users with matching usernames.
-        var matches = registeredUsers.filter(function(user)
-        {
-            return user.username === req.body.username;
-        });
-
-        // If there is a match, the user has already registered.
-        if (matches.length > 0)
-        {
-        	res.render('register', {message: "User already registered!"});
-
-        }
-         
-    	
-    	
-        // Register a new user.
-        else
-        {
-            var newUser = { username: req.body.username,
-                            password: req.body.password };
-            registeredUsers.push(newUser);
-            console.log("New user:"); console.log(newUser);
-            console.log("Registered users:"); console.log(registeredUsers);
-            res.render('index',
-	        		{ message: "Please log in!" });
-        }
-    }
-};
-*/
-/*
- * GET login page.
- */
-//module.exports.get_login = function(req, res)
-//{
-//   res.render('index', { message: "Please log in!" });
-//};
-
-/*
  * POST login page.
  */
 module.exports.post_login = function(req, res)
