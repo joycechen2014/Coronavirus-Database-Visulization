@@ -276,13 +276,7 @@ module.exports.load_management = function (req, res) {
 		let datalist = await collection.find({}, {sort: {dt: -1}});
 		res.render("management", { datalist: datalist });
 		// res.redirect("/management");
-		
-		
 	});
-
-	// res.send("Finish to load");
-
-	
 };
 
 
