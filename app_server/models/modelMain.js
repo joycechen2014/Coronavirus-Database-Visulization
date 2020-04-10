@@ -59,7 +59,8 @@ module.exports.post_login = function (req, res) {
 				console.log("Sucessfully logged in:");
 				req.session.user = req.body.username;
 				console.log(req.session.user);
-				res.render("loggedin", { name: req.session.user.username });
+				// res.render("loggedin", { name: req.session.user.username });
+				res.render('dashboard',{ name: req.session.user.username });
 			} else {
 				res.render("index", { message: "Username or password invalid!" });
 			}

@@ -35,6 +35,11 @@ router.get("/logout", ctrlMain.get_logout);
 router.get("/charts", modelMain.get_charts);
 
 /*
+ * GET dashboard page.
+ */
+router.get("/dashboard", ctrlMain.loggedIn, ctrlMain.get_dashboard);
+
+/*
  * GET download page.
  */
 router.get("/download", ctrlMain.loggedIn, ctrlMain.get_download);
