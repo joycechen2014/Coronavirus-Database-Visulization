@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home Page</title>
+<meta charset="utf-8">
+<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="/js/menus.js"></script>
+<link rel='stylesheet' type='text/css' href='/css/style.css'>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<div class="border">
+        <div class="inline">
+            <a href="../../dashboard" methods="GET" class="main_menu" >Dashboard</a>
+        </div>
+        <div class="inline">
+            <a href="../../charts" methods="GET" class="main_menu" >Charts</a>
+            <ul class="sub_menu" id="menu_charts">
+                <li>
+                    <a href="../../charts" methods="GET" class="sub_link">Charts1</a>
+                </li>
+                <li>
+                    <a href="../../charts" methods="GET" class="sub_link">Charts2</a>
+                </li>
+                <li>
+                    <a href="../../charts" methods="GET" class="sub_link">Charts3</a>
+                </li>
+            </ul>
+        </div>
+        <div class="inline">
+            <a href="../../download" methods="GET" class="main_menu">Downloads</a>
+            <ul class="sub_menu" id="menu_downloads">
+                <li>
+                    <a href="../../download" methods="GET" class="sub_link">Downloads1</a>
+                </li>
+                <li>
+                    <a href="../../download" methods="GET" class="sub_link">Downloads2</a>
+                </li>
+                <li>
+                    <a href="../../download" methods="GET" class="sub_link">Downloads3</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="right_button">
+            <button class="daymode"><a onclick="document.body.style.backgroundColor='white'">Day Mode</a></button>
+            <button class="nightmode"><a onclick="document.body.style.backgroundColor='lightgrey'">Night Mode</a></button>
+            <div  class="inline">
+                <a href="#" class="main_menu"><img src="pictures/avatar.JPG" alt="Avatar" class="avatar"></a>
+                <ul class="sub_menu" id="menu_avatar">
+                    <li>
+                        <a href="#" class="sub_link">My Profile</a>
+                    </li>
+                    <li>
+                        <a href="../../management" class="sub_link">Management</a>
+                    </li>
+                    <li>
+                        <a href="../../logout" methods="GET" class="sub_link">Logout</a></li>
+                    </li>
+                </ul>
+            </div>
+            </div>
+
+</div>
+
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="#">London</a></li>
+      <li><a href="#">Paris</a></li>
+      <li><a href="#">Tokyo</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+  <div id = "chart">
+    <div id="chart1" style=""></div>
+    <div id="chart2" style=""></div>
+  </div>  
+    <div id ="chart">
+    <div id="chart3"></div>
+    <div id="chart4"></div>
+  </div> 
+   <script type="text/javascript">
+        // based on prepared DOM, initialize echarts instance
+        var myChart = echarts.init(document.getElementById('chart1'));
+
+        // specify chart configuration item and data
+        var option = {
+            title: {
+                text: 'ECharts entry example'
+            },
+            tooltip: {},
+            legend: {
+                data:['Sales']
+            },
+            xAxis: {
+                data: ["shirt","cardign","chiffon shirt","pants","heels","socks"]
+            },
+            yAxis: {},
+            series: [{
+                name: 'Sales',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // use configuration item and data specified to show chart
+        myChart.setOption(option);
+    </script>
+  <script type="text/javascript">
+        // based on prepared DOM, initialize echarts instance
+        var myChart = echarts.init(document.getElementById('chart2'));
+
+        // specify chart configuration item and data
+        var option = {
+            title: {
+                text: 'ECharts entry example2'
+            },
+            tooltip: {},
+            legend: {
+                data:['Sales']
+            },
+            xAxis: {
+                data: ["shirt","cardign","chiffon shirt","pants","heels","socks"]
+            },
+            yAxis: {},
+            series: [{
+                name: 'Sales',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+        // use configuration item and data specified to show chart
+        myChart.setOption(option);
+    </script>  
+     <script type="text/javascript">
+        // based on prepared DOM, initialize echarts instance
+        var myChart = echarts.init(document.getElementById('chart3'));
+
+        // specify chart configuration item and data
+        var option = {
+            title: {
+                text: 'ECharts entry example2'
+            },
+            tooltip: {},
+            legend: {
+                data:['Sales']
+            },
+            xAxis: {
+                data: ["shirt","cardign","chiffon shirt","pants","heels","socks"]
+            },
+            yAxis: {},
+            series: [{
+                name: 'Sales',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+        // use configuration item and data specified to show chart
+        myChart.setOption(option);
+    </script> 
+     <script type="text/javascript">
+        // based on prepared DOM, initialize echarts instance
+        var myChart = echarts.init(document.getElementById('chart4'));
+
+        // specify chart configuration item and data
+        var option = {
+            title: {
+                text: 'ECharts entry example2'
+            },
+            tooltip: {},
+            legend: {
+                data:['Sales']
+            },
+            xAxis: {
+                data: ["shirt","cardign","chiffon shirt","pants","heels","socks"]
+            },
+            yAxis: {},
+            series: [{
+                name: 'Sales',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+        // use configuration item and data specified to show chart
+        myChart.setOption(option);
+    </script>  
+  </article>
+</section>
+<footer>
+  <p>Footer</p>
+</footer>
+
+</body>
+</html>

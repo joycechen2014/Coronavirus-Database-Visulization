@@ -211,6 +211,14 @@ h4 {
     text-align: center;
 }
 
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
 .user_button {
     display: inline;
 }
@@ -435,12 +443,6 @@ h4 {
     background: url("images/24-rss-square.png") 0 0 no-repeat;
 }
 
-section {
-    float: left;
-    position: absolute;
-    top: 200px;
-    max-width: 350px;
-}
 
 aside {
     float: right;
@@ -516,3 +518,76 @@ aside {
   height: 20px;
   left: -5px;
 }
+* {
+  box-sizing: border-box;
+}
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 10%;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 90%;
+  background-color: #f1f1f1;
+  
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+#chart {
+   float: left;
+   height:300px;
+
+}
+
+#chart1 {
+   width:500px; 
+   float:left;
+   height:300px;	
+   box-shadow: 10px 10px 5px #888888;
+}
+#chart2 {
+   width:500px; 
+   float:right;
+   height:300px;
+   box-shadow: 10px 10px 5px #888888;
+}
+#chart3 {
+   width:500px; 
+   float:left;
+   height:300px;
+   box-shadow: 10px 10px 5px #888888;
+}
+#chart4 {
+   width:500px; 
+   float:right;
+   height:300px;
+   box-shadow: 10px 10px 5px #888888;
+}
+
+

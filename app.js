@@ -11,6 +11,7 @@ var app = express();
 app.set("views", path.join(__dirname, "app_server", "views"));
 app.set("view engine", "jade");
 
+
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
