@@ -524,7 +524,7 @@ aside {
 /* Create two columns/boxes that floats next to each other */
 nav {
   float: left;
-  width: 10%;
+  width: 15%;
   background: #ccc;
   padding: 20px;
 }
@@ -536,9 +536,9 @@ nav ul {
 }
 
 article {
-  float: left;
+  float: right;
   padding: 20px;
-  width: 90%;
+  width: 80%;
   background-color: #f1f1f1;
   
 }
@@ -550,7 +550,13 @@ section:after {
   clear: both;
 }
 
-
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {

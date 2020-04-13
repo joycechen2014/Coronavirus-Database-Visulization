@@ -71,12 +71,21 @@ module.exports.post_login = function (req, res) {
 /*
  * GET charts page.
  */
+//module.exports.get_charts= function(req, res)
+//{
+//	var db = req.db;
+//	var collection = db.get("data");
+//	let docs = collection.find();
+//	res.render("charts", { datalist: docs });
+//};
+
 module.exports.get_charts= function(req, res)
 {
 	var db = req.db;
-	var collection = db.get("data");
-	let docs = collection.find();
-	res.render("charts", { datalist: docs });
+	var collection = db.get("crime");
+	let docs = collection.aggregate({$group: {_id: {$substr: ['$Time', 0, 1]}, count: {$sum: 1}}})
+	res.render("dashboard", { datalist: docs });
+	db.crime.aggregate([{"$group" : {_id:"$Time", count:{$sum:1}}}])
 };
 
 

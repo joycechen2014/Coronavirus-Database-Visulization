@@ -4,8 +4,19 @@
 <title>Home Page</title>
 <meta charset="utf-8">
 <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="/js/menus.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="/js/menus.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../jquery-ui/external/jquery/jquery.js"></script>
+  <script src="../jquery-ui/jquery-ui.min.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion({
+    	heightStyle: "content"
+    });
+  } );
+  </script>
 <link rel='stylesheet' type='text/css' href='/css/style.css'>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,131 +80,53 @@
 
 <section>
   <nav>
-    <ul>
-      <li><a href="#">London</a></li>
-      <li><a href="#">Paris</a></li>
-      <li><a href="#">Tokyo</a></li>
-    </ul>
+<div id="accordion">
+  <h3>Crime Situation</h3>
+  <div>
+    <p>
+      Crime Situation is serious in California
+    </p>
+  </div>
+  <h3>Crime Types</h3>
+  <div>
+    <p>
+     The typical crime type is WEAPON LAWS,ASSAULT,MISSING PERSON
+    </p>
+  </div>
+  <h3>How to avoid crime</h3>
+  <div>
+    <p>
+To avoid becoming a victim, you need to take charge of your own safety. There are no guarantees, but actively tuning your thoughts and actions toward crime prevention and self-defense can help lower chances of becoming a casualty.
+    </p>
+  </div>
+</div>
   </nav>
   
   <article>
+  
   <div id = "chart">
-    <div id="chart1" style=""></div>
-    <div id="chart2" style=""></div>
+      <div id = "chart1">
+      <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="500px" height="300px" src="https://charts.mongodb.com/charts-coronavirus-project-apnnb/embed/charts?id=3a528e5a-d9fe-485c-9d56-b20e67b885a1&theme=light"></iframe>
+      </div>
+      <div id = "chart2">
+      <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="500px" height="300px" src="https://charts.mongodb.com/charts-coronavirus-project-apnnb/embed/charts?id=19b868c2-04c5-4e06-935c-961f77199c07&theme=light"></iframe>
+      </div>
+
   </div>  
     <div id ="chart">
-    <div id="chart3"></div>
-    <div id="chart4"></div>
+     <div id = "chart3">
+     <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="500px" height="300px" src="https://charts.mongodb.com/charts-coronavirus-project-apnnb/embed/charts?id=e7311341-07aa-4e82-99a0-2f9187743344&theme=light"></iframe>
+     </div>
+     <div id = "chart4">
+     <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="500px" height="300px" src="https://charts.mongodb.com/charts-coronavirus-project-apnnb/embed/charts?id=6a3fa762-2380-460b-9763-8be7096ebba3&theme=light"></iframe>
+     </div>
+
   </div> 
-   <script type="text/javascript">
-        // based on prepared DOM, initialize echarts instance
-        var myChart = echarts.init(document.getElementById('chart1'));
 
-        // specify chart configuration item and data
-        var option = {
-            title: {
-                text: 'ECharts entry example'
-            },
-            tooltip: {},
-            legend: {
-                data:['Sales']
-            },
-            xAxis: {
-                data: ["shirt","cardign","chiffon shirt","pants","heels","socks"]
-            },
-            yAxis: {},
-            series: [{
-                name: 'Sales',
-                type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
-            }]
-        };
-
-        // use configuration item and data specified to show chart
-        myChart.setOption(option);
-    </script>
-  <script type="text/javascript">
-        // based on prepared DOM, initialize echarts instance
-        var myChart = echarts.init(document.getElementById('chart2'));
-
-        // specify chart configuration item and data
-        var option = {
-            title: {
-                text: 'ECharts entry example2'
-            },
-            tooltip: {},
-            legend: {
-                data:['Sales']
-            },
-            xAxis: {
-                data: ["shirt","cardign","chiffon shirt","pants","heels","socks"]
-            },
-            yAxis: {},
-            series: [{
-                name: 'Sales',
-                type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
-            }]
-        };
-        // use configuration item and data specified to show chart
-        myChart.setOption(option);
-    </script>  
-     <script type="text/javascript">
-        // based on prepared DOM, initialize echarts instance
-        var myChart = echarts.init(document.getElementById('chart3'));
-
-        // specify chart configuration item and data
-        var option = {
-            title: {
-                text: 'ECharts entry example2'
-            },
-            tooltip: {},
-            legend: {
-                data:['Sales']
-            },
-            xAxis: {
-                data: ["shirt","cardign","chiffon shirt","pants","heels","socks"]
-            },
-            yAxis: {},
-            series: [{
-                name: 'Sales',
-                type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
-            }]
-        };
-        // use configuration item and data specified to show chart
-        myChart.setOption(option);
-    </script> 
-     <script type="text/javascript">
-        // based on prepared DOM, initialize echarts instance
-        var myChart = echarts.init(document.getElementById('chart4'));
-
-        // specify chart configuration item and data
-        var option = {
-            title: {
-                text: 'ECharts entry example2'
-            },
-            tooltip: {},
-            legend: {
-                data:['Sales']
-            },
-            xAxis: {
-                data: ["shirt","cardign","chiffon shirt","pants","heels","socks"]
-            },
-            yAxis: {},
-            series: [{
-                name: 'Sales',
-                type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
-            }]
-        };
-        // use configuration item and data specified to show chart
-        myChart.setOption(option);
-    </script>  
   </article>
 </section>
 <footer>
-  <p>Footer</p>
+  <p>Copyright 2020, CoronavirusReport Inc</p>
 </footer>
 
 </body>
