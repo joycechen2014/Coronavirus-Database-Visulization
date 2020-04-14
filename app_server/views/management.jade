@@ -18,7 +18,7 @@ html(lang='zh')
 
   body
     include ../../menus/menus.html
-    h2 Coronavirus Database Management
+    h2 SFcrimes Database Management
     .center-add
       form(action="/management/load", method="POST")
         button(type="submit").btn.btn-load LOAD RECORD
@@ -28,19 +28,24 @@ html(lang='zh')
     table.management_table
       tbody
         tr.mangement_tr
-          th.management_th Country
+          th.management_th IncidntNum
+          th.management_th Category
+          th.management_th DayOfWeek
           th.management_th Date
-          th.management_th Type
-          th.management_th Total
-          th.management_th New
-          th.management_th Operation
+          th.management_th Time
+          th.management_th PdDistrict
+          th.management_th Resolution
+          th.management_th Address
         each data in datalist
           tr.mangement_tr
-            td.management_td #{data.country}
-            td.management_td #{data.dt}
-            td.management_td #{data.type}
-            td.management_td #{data.totalCases}
-            td.management_td #{data.newCases}
+            td.management_td #{data.IncidntNum}
+            td.management_td #{data.Category}
+            td.management_td #{data.DayOfWeek}
+            td.management_td #{data.Date}
+            td.management_td #{data.Time}
+            td.management_td #{data.PdDistrict}
+            td.management_td #{data.Resolution}
+            td.management_td #{data.Address}
             td.management_td 
               button.btn.btn-update(value="#{data._id}") UPDATE
               button.btn.btn-delete(value="#{data._id}") DELETE

@@ -95,11 +95,14 @@ module.exports.get_charts= function(req, res)
 module.exports.get_management = function (req, res) {
 	if (req.session.user === "admin") {
 		var db = req.db;
-		var collection = db.get("data");
+		var collection = db.get("crime");
 		// let datalist = await collection.find({}).sort({dt: -1});
 		// res.render("management", { datalist: datalist });
 
-		collection.find({}, {sort: {dt : -1}}, function (err, docs) {
+		// collection.find({}, {sort: {Date : -1}, limit: 1000}, function (err, docs) {
+		collection.find({}, { limit: 1000}, function (err, docs) {
+			console.log("begin to read data ====================");
+			console.log(docs);
 			res.render("management", { datalist: docs });
 		});
 	} else {
@@ -256,7 +259,7 @@ module.exports.delete_management = async function (req, res) {
 module.exports.load_management = function (req, res) {
 	console.log("Start loading");
 	var db = req.db;
-	var collection = db.get("data");
+	var collection = db.get("crime");
 	var fs = req.fs;
 	var csv = req.csv;
 	
@@ -265,18 +268,25 @@ module.exports.load_management = function (req, res) {
 
 	const dataset = [];
 
-	fs.createReadStream('public/data/us-covid-19-case.csv')
+	fs.createReadStream('public/data/sfcrime.csv')
 		.pipe(csv())
 		.on('data', (data) => dataset.push(data))
 		.on('end', async () => {
 			for(let i = 0; i < dataset.length; i++){
 					 collection.insert(
 						{
-							"country": "US",
-							"dt" : dataset[i].Date,
-							"type": dataset[i].Type,
-							"totalCases": dataset[i].TotalCases,
-							"newCases": dataset[i].NewCases,
+							"IncidntNum": dataset[i].IncidntNum,
+							"Category": dataset[i].Category,
+							"Descript": dataset[i].Descript,
+							"DayOfWeek": dataset[i].DayOfWeek,
+							"Date": dataset[i].Date,
+							"Time": dataset[i].Time,
+							"PdDistrict": dataset[i].PdDistrict,
+							"Resolution": dataset[i].Resolution,
+							"Address": dataset[i].Address,
+							"X": dataset[i].X,
+							"Y": dataset[i].Y,
+							"Location": dataset[i].Location,
 						},function (err, doc) {
 							if (err) throw err;
 							console.log("Record inserted Successfully");
