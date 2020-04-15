@@ -538,7 +538,7 @@ nav ul {
 article {
   float: right;
   padding: 20px;
-  width: 80%;
+  width: 100%;
   background-color: #f1f1f1;
   
 }
@@ -566,33 +566,35 @@ footer {
   }
 }
 #chart {
-   float: left;
+   /* float: left; */
    height:300px;
 
 }
 
 #chart1 {
-   width:500px; 
+   width:600px; 
    float:left;
-   height:300px;	
+   height:350px;	
    box-shadow: 10px 10px 5px #888888;
 }
 #chart2 {
-   width:500px; 
+   width:600px; 
    float:right;
-   height:300px;
+   height:350px;
    box-shadow: 10px 10px 5px #888888;
 }
 #chart3 {
-   width:500px; 
+   width:600px; 
    float:left;
-   height:300px;
+   height:350px;
+   margin-top: 15px;
    box-shadow: 10px 10px 5px #888888;
 }
 #chart4 {
-   width:500px; 
+   width:600px; 
    float:right;
-   height:300px;
+   height:350px;
+   margin-top: 15px;
    box-shadow: 10px 10px 5px #888888;
 }
 
