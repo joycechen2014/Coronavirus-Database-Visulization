@@ -1,0 +1,41 @@
+doctype html
+html(lang='en')
+  head
+    title FAQ Page
+    meta(charset='utf-8')
+    script(src='https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js')
+    script(src='https://code.jquery.com/jquery-1.12.4.js')
+    script(src='https://code.jquery.com/jquery-3.3.1.js')
+    script(src='/js/menus.js')
+    script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+    script(src='../jquery-ui/external/jquery/jquery.js')
+    script(src='../jquery-ui/jquery-ui.min.js')
+    script.
+      $( function() {
+      $( "#accordion" ).accordion({
+      heightStyle: "content"
+      });
+      } );
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+  body
+    include ../../menus/menus.html
+    h1#faq-center SFcrime Database Visualization FAQ
+    section
+        #accordion
+          h3 1. What are crime catogories in the "Crime Catogory" chart?
+          div
+            p
+              | Crime category is classified as LARCENY or ROBBERY, ASSAULT, and OTHER OFFENSES.
+          h3 2. What does category "LARCENY or ROBBERY" includes？
+          div
+            p
+              | LARCENY or ROBBERY are felony theft. It includes Larceny of Certain Animals and Poultry, Larceny of Financial Instruments, Credit Card Fraud, Grand Larceny, Armed Robbery, Extortion, and Carjacking.
+          h3 3. What does category "ASSAULT" includes?
+          div
+            p
+              | An assault is the act of inflicting physical harm or unwanted physical contact upon a person or, in some specific legal definitions, a threat or attempt to commit such an action. It includes Aggravated assault, Family Violence, Deadly Weapon Assault, Intoxication Assault, Misdemeanor Assault, and Serious Bodily Injury Assault.
+          h3 4. What are crime catogories in the "OTHER OFFENSES" chart?
+          div
+            p
+              | Other Offenses includes all crimes except "LARCENY or ROBBERY" and "ASSAULT".

@@ -598,4 +598,13 @@ footer {
    box-shadow: 10px 10px 5px #888888;
 }
 
+#faq-center {
+    text-align: center;
+}
+
+#accordion {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
 

@@ -45,6 +45,11 @@ router.get("/dashboard", ctrlMain.loggedIn, ctrlMain.get_dashboard);
 router.get("/download", ctrlMain.loggedIn, ctrlMain.get_download);
 
 /*
+ * GET download page.
+ */
+router.get("/faq", ctrlMain.loggedIn, ctrlMain.get_faq);
+
+/*
  * GET management page.
  */
 router.get("/management", ctrlMain.loggedIn, modelMain.get_management);
