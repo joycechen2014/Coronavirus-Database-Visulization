@@ -19,42 +19,7 @@ html(lang='en')
     link(rel='stylesheet', type='text/css', href='/css/style.css')
     meta(name='viewport', content='width=device-width, initial-scale=1')
   body
-    .border
-      .inline
-        a.main_menu(href='../../dashboard', methods='GET') Dashboard
-      .inline
-        a.main_menu(href='../../charts', methods='GET') Charts
-        ul#menu_charts.sub_menu
-          li
-            a.sub_link(href='../../charts', methods='GET') Charts1
-          li
-            a.sub_link(href='../../charts', methods='GET') Charts2
-          li
-            a.sub_link(href='../../charts', methods='GET') Charts3
-      .inline
-        a.main_menu(href='../../download', methods='GET') Downloads
-        ul#menu_downloads.sub_menu
-          li
-            a.sub_link(href='../../download', methods='GET') Downloads1
-          li
-            a.sub_link(href='../../download', methods='GET') Downloads2
-          li
-            a.sub_link(href='../../download', methods='GET') Downloads3
-      .right_button
-        button.daymode
-          a(onclick="document.body.style.backgroundColor='white'") Day Mode
-        button.nightmode
-          a(onclick="document.body.style.backgroundColor='lightgrey'") Night Mode
-        .inline
-          a.main_menu(href='#')
-            img.avatar(src='pictures/avatar.JPG', alt='Avatar')
-          ul#menu_avatar.sub_menu
-            li
-              a.sub_link(href='#') My Profile
-            li
-              a.sub_link(href='../../management') Management
-            li
-              a.sub_link(href='../../logout', methods='GET') Logout
+    include ../../menus/menus.html
     section
       nav
         #accordion
