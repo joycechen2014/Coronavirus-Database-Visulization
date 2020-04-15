@@ -60,7 +60,7 @@ module.exports.post_login = function (req, res) {
 				req.session.user = req.body.username;
 				console.log(req.session.user);
 				// res.render("loggedin", { name: req.session.user.username });
-				res.render('dashboard',{ name: req.session.user.username });
+				res.redirect('dashboard');
 			} else {
 				res.render("index", { message: "Username or password invalid!" });
 			}
@@ -82,10 +82,11 @@ module.exports.post_login = function (req, res) {
 module.exports.get_charts= function(req, res)
 {
 	var db = req.db;
-	var collection = db.get("crime");
-	let docs = collection.aggregate({$group: {_id: {$substr: ['$Time', 0, 1]}, count: {$sum: 1}}})
-	res.render("dashboard", { datalist: docs });
-	db.crime.aggregate([{"$group" : {_id:"$Time", count:{$sum:1}}}])
+	res.render("dashboard");
+	// var collection = db.get("crime");
+	// let docs = collection.aggregate({$group: {_id: {$substr: ['$Time', 0, 1]}, count: {$sum: 1}}})
+	// res.render("dashboard", { datalist: docs });
+	// db.crime.aggregate([{"$group" : {_id:"$Time", count:{$sum:1}}}])
 };
 
 

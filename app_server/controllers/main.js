@@ -34,7 +34,7 @@ module.exports.checkSignIn = function(req, res, next){
 module.exports.index = function(req, res, next)
 { 
 
-	 res.render('loggedin', { name: req.session.user.username});
+	 res.render('dashboard', { name: req.session.user.username});
     //res.sendFile(path.join(__dirname+'/../../index.html'));
     console.log('Cookies: ', req.cookies);
     console.log('session: ', req.session.user);
