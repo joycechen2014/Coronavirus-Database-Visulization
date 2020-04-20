@@ -5,7 +5,7 @@ function init() {
   for(let i = 0; i < allLinks.length; i++){
     if(allLinks[i].className === "main_menu"){
       allLinks[i].onmouseover = toggleMenu;
-      allLinks[i].onclick = clickHandler;
+      // allLinks[i].onclick = clickHandler;
     }
   }
 
