@@ -116,7 +116,7 @@ module.exports.get_management = function (req, res) {
  */
 module.exports.add_management = async function (req, res) {
 	var db = req.db;
-	var collection = db.get("crime");
+	var collection = db.get("crimeData");
 	let datalist = await collection.find();
 	if (!req.body.incidntnum) {
 		res.render("management", {
@@ -201,7 +201,7 @@ module.exports.add_management = async function (req, res) {
 module.exports.update_management = async function (req, res) {
 	console.log("Start updating");
 	var db = req.db;
-	var collection = db.get("crime");
+	var collection = db.get("crimeData");
 	let datalist = await collection.find();
 	if (!req.body.incidntnum) {
 		res.render("management", {
@@ -289,7 +289,7 @@ module.exports.update_management = async function (req, res) {
 module.exports.delete_management = async function (req, res) {
   console.log("Start deleting");
   var db = req.db;
-  var collection = db.get("crime");
+  var collection = db.get("crimeData");
   var id = req.body.id;
   console.log(req.body)
   try {
@@ -309,7 +309,7 @@ module.exports.delete_management = async function (req, res) {
 module.exports.load_management = function (req, res) {
 	console.log("Start loading");
 	var db = req.db;
-	var collection = db.get("crime");
+	var collection = db.get("crimeData");
 	var fs = req.fs;
 	var csv = req.csv;
 	
@@ -356,7 +356,7 @@ module.exports.load_management = function (req, res) {
 module.exports.search_management = async function (req, res) {
 	console.log("Start searching");
 	var db = req.db;
-	var collection = db.get("crime");
+	var collection = db.get("crimeData");
 	var type = req.params.type;
 	console.log(req.params)
 	try {
