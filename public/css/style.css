@@ -261,6 +261,7 @@ footer {
 }
 
 .btn {
+	color:#ffffff;
     font-size: 14px;
     padding: 6px 12px;
     margin-bottom: 0;
@@ -281,21 +282,21 @@ footer {
 }
 
 .btn-add {
-    background-color: #00FF00;
+    background-color: #14CC64;
     margin: 1rem;
     width: 8rem;
     margin-bottom: 1rem;
 }
 
 .btn-load {
-    background-color: #00FF00;
+    background-color: #14CC64;
     margin: 1rem;
     width: 8rem;
     margin-bottom: 1rem;
 }
 
 .btn-search {
-    background-color: #00FF00;
+    background-color: #14CC64;
     margin: 1rem;
     width: 8rem;
     margin-bottom: 1rem;
