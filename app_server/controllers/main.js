@@ -98,15 +98,8 @@ module.exports.get_logout = function(req, res)
 
     if (req.session.user)
     {
-        var name = req.session.user.username;
-        console.log(name);
-
-        req.session.destroy(function()
-        {
-            console.log(name + " logged out.");
-        });
-
-        res.send(name + " is now logged out.");
+    	  req.session.user =null;
+    	  res.redirect('/');
     }
     else
     {

@@ -19,11 +19,10 @@ html(lang='zh')
   body
     include ../../menus/menus.html
     h2 SFcrimes Database Management
-    .center-add
+    
       form(action="/management/load", method="POST")
         button(type="submit").btn.btn-load LOAD RECORD
-      button.btn.btn-add ADD RECORD
-    .center-add  
+        button.btn.btn-add ADD RECORD
         button.btn.btn-search SEARCH
     table.management_table
       tbody
