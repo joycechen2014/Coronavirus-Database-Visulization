@@ -101,7 +101,7 @@ module.exports.get_management = function (req, res) {
 		// res.render("management", { datalist: datalist });
 
 		// collection.find({}, {sort: {Date : -1}, limit: 1000}, function (err, docs) {
-		collection.find({}, { limit: 1000}, function (err, docs) {
+		collection.find({}, { sort: {Date : -1}, limit: 100 }, function (err, docs) {
 			console.log("begin to read data ====================");
 			console.log(docs);
 			res.render("management", { datalist: docs });
