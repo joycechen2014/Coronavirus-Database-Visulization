@@ -1,4 +1,3 @@
-
 $(function () {
     var dialog;
     dialog = $("#dialog-confirm").dialog({
