@@ -53,25 +53,37 @@ html(lang='zh')
 
     div(id="dialog-form1")
       form(action='/management/add' method='POST')
-        label Country:
+        label IncidntNum:
         br
-        input#namecolor(type='text' name='countryname' placeholder='Country' required='')
+        input#namecolor(type='number' name='incidntnum' placeholder='Number' required='')
+        br
+        label Category:
+        br
+        input#typecolor(type='text' name='category' placeholder='Category' required='')
+        br
+        label DayOfWeek:
+        br
+        input#typecolor(type='text' name='dayofweek' placeholder='Day' required='')
         br
         label Date:
         br
-        input.otherformat(type='date' name='date' placeholder='Date' required='')
+        input#typecolor(type='date' name='date' placeholder='Date' required='')
         br
-        label Type:
+        label Time:
         br
-        input#typecolor(type='text' name='type' placeholder='Type' required='')
+        input#typecolor(type='time' name='time' placeholder='Time' required='')
         br
-        label Total:
+        label PdDistrict:
         br
-        input.otherformat(type='number' name='totalnumber' placeholder='Total Number' required='')
+        input#typecolor(type='text' name='pddistrict' placeholder='Location' required='')
         br
-        label New:
+        label Resolution:
         br
-        input.otherformat(type='number' name='newnumber' placeholder='New cases' required='')
+        input#typecolor(type='text' name='resolution' placeholder='Resolution' required='')
+        br
+        label Address:
+        br
+        input#typecolor(type='text' name='address' placeholder='Address' required='')
         br
         br
         input(type='submit' value='Add')
