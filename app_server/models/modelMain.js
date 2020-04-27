@@ -258,6 +258,7 @@ module.exports.update_management = async function (req, res) {
 		var pddis = req.body.pddistrict;
 		var resol = req.body.resolution;
 		var addre = req.body.address;
+		var id = req.body.id;
 		console.log("Data update");
 		console.log(req.body)
 		try {
@@ -288,7 +289,7 @@ module.exports.update_management = async function (req, res) {
 module.exports.delete_management = async function (req, res) {
   console.log("Start deleting");
   var db = req.db;
-  var collection = db.get("data");
+  var collection = db.get("crime");
   var id = req.body.id;
   console.log(req.body)
   try {
@@ -355,7 +356,7 @@ module.exports.load_management = function (req, res) {
 module.exports.search_management = async function (req, res) {
 	console.log("Start searching");
 	var db = req.db;
-	var collection = db.get("data");
+	var collection = db.get("crime");
 	var type = req.params.type;
 	console.log(req.params)
 	try {
