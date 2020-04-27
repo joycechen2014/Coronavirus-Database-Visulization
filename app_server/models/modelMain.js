@@ -83,10 +83,10 @@ module.exports.get_charts= function(req, res)
 {
 	var db = req.db;
 	res.render("dashboard");
-	// var collection = db.get("crime");
+	// var collection = db.get("crimeData");
 	// let docs = collection.aggregate({$group: {_id: {$substr: ['$Time', 0, 1]}, count: {$sum: 1}}})
 	// res.render("dashboard", { datalist: docs });
-	// db.crime.aggregate([{"$group" : {_id:"$Time", count:{$sum:1}}}])
+	// db.crimeData.aggregate([{"$group" : {_id:"$Time", count:{$sum:1}}}])
 };
 
 
@@ -96,7 +96,7 @@ module.exports.get_charts= function(req, res)
 module.exports.get_management = function (req, res) {
 	if (req.session.user === "admin") {
 		var db = req.db;
-		var collection = db.get("crime");
+		var collection = db.get("crimeData");
 		// let datalist = await collection.find({}).sort({dt: -1});
 		// res.render("management", { datalist: datalist });
 
