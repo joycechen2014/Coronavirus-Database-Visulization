@@ -201,51 +201,75 @@ module.exports.add_management = async function (req, res) {
 module.exports.update_management = async function (req, res) {
 	console.log("Start updating");
 	var db = req.db;
-	var collection = db.get("data");
+	var collection = db.get("crime");
 	let datalist = await collection.find();
-	if (!req.body.countryname) {
+	if (!req.body.incidntnum) {
 		res.render("management", {
 			datalist: datalist,
 			message: "Country Name can not be empty!"
 		});
-	} else if (!req.body.date) {
+	} else if (!req.body.category) {
 		res.render("management", {
 			datalist: datalist,
 			message: "Date can not be empty!"
 		});
-	} else if (!req.body.type) {
+	} else if (!req.body.dayofweek) {
 		res.render("management", {
 			datalist: datalist,
 			message: "Type can not be empty!"
 		});
-	} else if (!req.body.totalnumber) {
+	} else if (!req.body.date) {
 		res.render("management", {
 			datalist: datalist,
 			message: "Total Number can not be empty!"
 		});
-	} else if (!req.body.newnumber) {
+	} else if (!req.body.time) {
 		res.render("management", {
 			datalist: datalist,
 			message: "New Number can not be empty!"
 		});
-	}  else {
+	} else if (!req.body.pddistrict) {
+		res.render("management", {
+			datalist: datalist,
+			message: "New Number can not be empty!"
+		});
+	} else if (!req.body.resolution) {
+		res.render("management", {
+			datalist: datalist,
+			message: "New Number can not be empty!"
+		});
+	} else if (!req.body.address) {
+		res.render("management", {
+			datalist: datalist,
+			message: "New Number can not be empty!"
+		});
+	} else if (!req.body.operations) {
+		res.render("management", {
+			datalist: datalist,
+			message: "New Number can not be empty!"
+		});
+	} else {
 		var db = req.db;
-		var country = req.body.countryname;
-		var dt = req.body.date;
-		var type = req.body.type;
-		var totalnum = req.body.totalnumber;
-		var newnum = req.body.newnumber;
-		var id = req.body.id;
+		var innum = req.body.incidntnum;
+		var categ = req.body.category;
+		var dayof = req.body.dayofweek;
+		var date = req.body.date;
+		var time = req.body.time;
+		var pddis = req.body.pddistrict;
+		var resol = req.body.resolution;
+		var addre = req.body.address;
 		console.log("Data update");
 		console.log(req.body)
 		try {
 			await collection.findOneAndUpdate({ _id: id }, {$set:{
-				country: country,
-				dt: dt,
-				type: type,
-				totalCases: totalnum,
-				newCases: newnum,
-				dt: dt
+				IncidntNum: innum,
+				Category: categ,
+				DayOfWeek: dayof,
+				Date: date,
+				Time: time,
+				PdDistrict: pddis,
+				Resolution: resol,
+				Address: addre
 			}});
 			console.log("Data update Successfully");
 			let datalist = await collection.find();
