@@ -101,6 +101,7 @@ module.exports.get_management = function (req, res) {
 		// res.render("management", { datalist: datalist });
 
 		// collection.find({}, {sort: {Date : -1}, limit: 1000}, function (err, docs) {
+		//limit the database to list the first 1000 
 		collection.find({}, { sort: {Date : -1}, limit: 1000}, function (err, docs) {
 			console.log("begin to read data ====================");
 			console.log(docs);
@@ -117,7 +118,8 @@ module.exports.get_management = function (req, res) {
 module.exports.add_management = async function (req, res) {
 	var db = req.db;
 	var collection = db.get("crime");
-	let datalist = await collection.find();
+	console.log(req.body)
+	let datalist = await collection.find({}, { sort: { Date: -1 }, limit: 1000 });
 	if (!req.body.incidntnum) {
 		res.render("management", {
 			datalist: datalist,
@@ -158,11 +160,6 @@ module.exports.add_management = async function (req, res) {
 			datalist: datalist,
 			message: "Can not be empty!"
 		});
-	} else if (!req.body.operations) {
-		res.render("management", {
-			datalist: datalist,
-			message: "Can not be empty!"
-		});
 	} else {
 		var db = req.db;
 		var innum = req.body.incidntnum;
@@ -171,7 +168,7 @@ module.exports.add_management = async function (req, res) {
 		var date = req.body.date;
 		var time = +(req.body.time)
 		if (time < 10) {
-			time = +('0' + time)
+			time = ('0' + time)
 		}
 		var pddis = req.body.pddistrict;
 		var resol = req.body.resolution;
@@ -188,7 +185,8 @@ module.exports.add_management = async function (req, res) {
 				Address: addre
 			});
 			console.log("New data set added Successfully");
-			let datalist = await collection.find({}, {sort: {dt: -1}});
+			// let datalist = await collection.find({}, { sort: { dt: -1 } });
+			let datalist = await collection.find({}, { sort: { dt: -1 }, limit: 1000 });
    			res.render("management", { datalist: datalist });
 		} catch (e) {
 			console.error(e);
@@ -205,7 +203,7 @@ module.exports.update_management = async function (req, res) {
 	console.log("Start updating");
 	var db = req.db;
 	var collection = db.get("crime");
-	let datalist = await collection.find();
+	let datalist = await collection.find({}, { sort: { Date: -1 }, limit: 1000 });
 	if (!req.body.incidntnum) {
 		res.render("management", {
 			datalist: datalist,
@@ -246,11 +244,6 @@ module.exports.update_management = async function (req, res) {
 			datalist: datalist,
 			message: "Can not be empty!"
 		});
-	} else if (!req.body.operations) {
-		res.render("management", {
-			datalist: datalist,
-			message: "Can not be empty!"
-		});
 	} else {
 		var db = req.db;
 		var innum = req.body.incidntnum;
@@ -259,7 +252,7 @@ module.exports.update_management = async function (req, res) {
 		var date = req.body.date;
 		var time = +(req.body.time)
 		if (time<10) {
-			time = +('0'+time)
+			time = ('0'+time)
 		}
 		var pddis = req.body.pddistrict;
 		var resol = req.body.resolution;
@@ -279,7 +272,7 @@ module.exports.update_management = async function (req, res) {
 				Address: addre
 			}});
 			console.log("Data update Successfully");
-			let datalist = await collection.find();
+			let datalist = await collection.find({}, { sort: { dt: -1 }, limit: 1000 });
 			res.render("management", { datalist: datalist });
 		} catch (e) {
 			console.error(e);
@@ -301,7 +294,8 @@ module.exports.delete_management = async function (req, res) {
   try {
    await collection.findOneAndDelete({ _id: id });
    console.log("Data delete Successfully");
-   let datalist = await collection.find({}, {sort: {dt: -1}});
+	//   let datalist = await collection.find({}, { sort: { dt: -1 } });
+	  let datalist = await collection.find({}, { sort: { Date: -1 }, limit: 1000 });
    res.render("management", { datalist: datalist });
   } catch (e) {
    console.error(e);
@@ -363,10 +357,11 @@ module.exports.search_management = async function (req, res) {
 	console.log("Start searching");
 	var db = req.db;
 	var collection = db.get("crime");
-	var type = req.params.type;
+	// var type = req.params.type;
+	var innum = req.params.incidntnum;
 	console.log(req.params)
 	try {
-		let datalist = await collection.find({ type: type});
+		let datalist = await collection.find({ IncidntNum: innum});
 		console.log("Data search Successfully");
 		res.render("management", { datalist: datalist });
 	} catch (e) {

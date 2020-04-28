@@ -78,7 +78,7 @@ router.post("/management/delete", ctrlMain.loggedIn, modelMain.delete_management
 /*
  * SEARCH data from management page.
  */
-router.get("/management/:type", ctrlMain.loggedIn, modelMain.search_management);
+router.get("/management/:incidntnum", ctrlMain.loggedIn, modelMain.search_management);
 
 
 module.exports = router;
