@@ -6,12 +6,15 @@ html(lang='zh')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet' href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css') 
     link(rel='stylesheet' href='/resources/demos/style.css')
+    link(rel='stylesheet' href='https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css')
     script(src='https://code.jquery.com/jquery-1.12.4.js') 
     script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+    script(src='https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js')
     script(src='../js/add.js')
     script(src='../js/update.js')
     script(src='../js/search.js')
     script(src='../js/delete.js')
+    script(src='../js/table.js')
     title Database Management
     style
       include ../../public/css/style.css
@@ -24,8 +27,8 @@ html(lang='zh')
         button(type="submit").btn.btn-load LOAD RECORD
         button.btn.btn-add ADD RECORD
         button.btn.btn-search SEARCH
-    table.management_table
-      tbody
+    table#table_container.management_table
+      thead
         tr.mangement_tr
           th.management_th IncidntNum
           th.management_th Category
@@ -36,6 +39,7 @@ html(lang='zh')
           th.management_th Resolution
           th.management_th Address
           th.management_th Operations
+      tbody
         each data in datalist
           tr.mangement_tr
             td.management_td #{data.IncidntNum}
