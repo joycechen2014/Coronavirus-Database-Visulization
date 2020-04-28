@@ -29,14 +29,14 @@ $(function () {
         var resol = $(this).parents("tr").find("td").eq(6).text();
         var addre = $(this).parents("tr").find("td").eq(7).text();
         var id = $(this).parents("tr").find("td").eq(8).find('.btn-update').val();
-        $("input[name=incidntnum]").val(innum);
-        $("input[name=category]").val(categ);
-        $("input[name=dayofweek]").val(dayof);
-        $("input[name=date]").val(date);
-        $("input[name=time]").val(time);
-        $("input[name=pddistrict]").val(pddis);
-        $("input[name=resolution]").val(resol);
-        $("input[name=address]").val(addre);
-        $("input[name=id]").val(id);
+        $("#dialog-form2 input[name=incidntnum]").val(innum);
+        $("#dialog-form2 input[name=category]").val(categ);
+        $("#dialog-form2 input[name=dayofweek]").val(dayof);
+        $("#dialog-form2 input[name=date]").val(date);
+        $("#dialog-form2 input[name=time]").val(time);
+        $("#dialog-form2 input[name=pddistrict]").val(pddis);
+        $("#dialog-form2 input[name=resolution]").val(resol);
+        $("#dialog-form2 input[name=address]").val(addre);
+        $("#dialog-form2 input[name=id]").val(id);
     });
 })

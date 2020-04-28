@@ -11,6 +11,6 @@ $(function () {
 
     $("#dialog-form3").submit(function (e) {
         e.preventDefault();
-        window.open(`${window.location.origin}/management/${$("#dialog-form3 input[name=type]").val()}`, '_self')
+        window.open(`${window.location.origin}/management/${$("#dialog-form3 input[name=incidntnum]").val()}`, '_self')
     })
 })

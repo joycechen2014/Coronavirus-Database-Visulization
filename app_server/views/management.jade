@@ -21,7 +21,7 @@ html(lang='zh')
     h2 SFcrimes Database Management
     
       form(action="/management/load", method="POST")
-        button.btn.btn-load LOAD RECORD
+        button(type="submit").btn.btn-load LOAD RECORD
         button.btn.btn-add ADD RECORD
         button.btn.btn-search SEARCH
     table.management_table
@@ -133,9 +133,9 @@ html(lang='zh')
 
     div(id="dialog-form3")
       form(action='/management/:type' method='POST')
-        label Type:
+        label IncidntNum:
         br
-        input#typecolor(type='text' name='type' placeholder='Type' required='')
+        input#typecolor(type='number' name='incidntnum' placeholder='number' required='')
         br
         br
         input(type='submit' value='search')

@@ -306,7 +306,7 @@ module.exports.delete_management = async function (req, res) {
 /*
  * POST Load data from management page.
  */
-module.exports.load_management = function (req, res) {
+module.exports.load_management =async function (req, res) {
 	console.log("Start loading");
 	var db = req.db;
 	var collection = db.get("crimeData");
@@ -339,14 +339,14 @@ module.exports.load_management = function (req, res) {
 							"Location": dataset[i].Location,
 						},function (err, doc) {
 							if (err) throw err;
-							console.log("Record inserted Successfully");
+							console.log("Record inserted Successfully!");
 					}
 				);	
 		};
 		let datalist = await collection.find({}, {sort: {dt: -1}});
 		res.render("management", { datalist: datalist });
 		// res.redirect("/management");
-	});
+	// });
 };
 
 
