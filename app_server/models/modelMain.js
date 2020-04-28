@@ -121,47 +121,47 @@ module.exports.add_management = async function (req, res) {
 	if (!req.body.incidntnum) {
 		res.render("management", {
 			datalist: datalist,
-			message: "Country Name can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.category) {
 		res.render("management", {
 			datalist: datalist,
-			message: "Date can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.dayofweek) {
 		res.render("management", {
 			datalist: datalist,
-			message: "Type can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.date) {
 		res.render("management", {
 			datalist: datalist,
-			message: "Total Number can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.time) {
 		res.render("management", {
 			datalist: datalist,
-			message: "New Number can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.pddistrict) {
 		res.render("management", {
 			datalist: datalist,
-			message: "New Number can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.resolution) {
 		res.render("management", {
 			datalist: datalist,
-			message: "New Number can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.address) {
 		res.render("management", {
 			datalist: datalist,
-			message: "New Number can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.operations) {
 		res.render("management", {
 			datalist: datalist,
-			message: "New Number can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else {
 		var db = req.db;
@@ -169,7 +169,10 @@ module.exports.add_management = async function (req, res) {
 		var categ = req.body.category;
 		var dayof = req.body.dayofweek;
 		var date = req.body.date;
-		var time = req.body.time;
+		var time = +(req.body.time)
+		if (time < 10) {
+			time = +('0' + time)
+		}
 		var pddis = req.body.pddistrict;
 		var resol = req.body.resolution;
 		var addre = req.body.address;
@@ -206,47 +209,47 @@ module.exports.update_management = async function (req, res) {
 	if (!req.body.incidntnum) {
 		res.render("management", {
 			datalist: datalist,
-			message: "Country Name can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.category) {
 		res.render("management", {
 			datalist: datalist,
-			message: "Date can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.dayofweek) {
 		res.render("management", {
 			datalist: datalist,
-			message: "Type can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.date) {
 		res.render("management", {
 			datalist: datalist,
-			message: "Total Number can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.time) {
 		res.render("management", {
 			datalist: datalist,
-			message: "New Number can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.pddistrict) {
 		res.render("management", {
 			datalist: datalist,
-			message: "New Number can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.resolution) {
 		res.render("management", {
 			datalist: datalist,
-			message: "New Number can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.address) {
 		res.render("management", {
 			datalist: datalist,
-			message: "New Number can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else if (!req.body.operations) {
 		res.render("management", {
 			datalist: datalist,
-			message: "New Number can not be empty!"
+			message: "Can not be empty!"
 		});
 	} else {
 		var db = req.db;
@@ -254,7 +257,10 @@ module.exports.update_management = async function (req, res) {
 		var categ = req.body.category;
 		var dayof = req.body.dayofweek;
 		var date = req.body.date;
-		var time = req.body.time;
+		var time = +(req.body.time)
+		if (time<10) {
+			time = +('0'+time)
+		}
 		var pddis = req.body.pddistrict;
 		var resol = req.body.resolution;
 		var addre = req.body.address;
