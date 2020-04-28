@@ -4,6 +4,7 @@ $(document).ready(
             "searching": false,
             "lengthChange": false,
             "pageLength": 15,
+            "autoWidth": false,
         });
     }
 )
