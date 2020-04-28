@@ -480,8 +480,6 @@ aside {
 /* Database Management */
 .management_table {
     border-collapse: collapse;
-    margin-left: 5rem;
-    margin-right: 5rem;
 }
 
 .management_td, .management_th {
