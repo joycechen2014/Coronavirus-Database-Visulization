@@ -10,10 +10,6 @@ html(lang='en')
     link(rel='stylesheet', type='text/css', href='/css/style.css')
     // import echart.js
     script(src='https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js')
-
-
-   
-
     link(rel='canonical', href='https://getbootstrap.com/docs/4.4/examples/sign-in/')
     // Bootstrap core CSS	
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
@@ -54,5 +50,40 @@ html(lang='en')
       input#inputPassword.form-control(type='password', placeholder='Password', name='password', required='')
       
       button.btn.btn-lg.btn-success.btn-block(type='submit', value='Submit') Sign in
-      a.registerBox(href='register', method='GET')  Don't have an account
+      .open-btn
+        .open-button(onclick='openForm()')
+         div Don't have an account
+      //a.registerBox(href='register', method='GET')  Don't have an account
       p.mt-5.mb-3.text-muted Crime Data Visualization Inc. © 2017-2020	  
+            
+     #loginPopup
+      #popupForm.form-popup
+        form.form-container(action='/register', method='POST')
+          h3 Please Log in
+          label(for='Username')
+            
+          input#username(type='text', placeholder='Username', name='username', required='')
+          label(for='email')
+            
+          input#email(type='text', placeholder='Your Email', pattern='^.+@.+..{2,4}$', name='email', required='')
+          label(for='psw')
+            
+          input#psw(type='password', placeholder='Your Password', name='password', required='')
+          
+          input#psw(type='password', placeholder='Re-etner Password', name='passwordConfirm', required='')
+          button.btn(type='submit') Sign Up
+          button.btn.cancel(type='button', onclick='closeForm()') Close
+    script.
+      function openForm() {
+      document.getElementById("loginPopup").style.display="block";
+      }
+      function closeForm() {
+      document.getElementById("loginPopup").style.display= "none";
+      }
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+      var modal = document.getElementById('loginPopup');
+      if (event.target == modal) {
+      closeForm();
+      }
+      }

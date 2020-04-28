@@ -1,8 +1,8 @@
 module.exports.post_register = function (req, res) {
 	if (!req.body.username) {
-		res.render("/register", { message: "Username can not be empty!" });
+		res.render("index", { message: "Username can not be empty!" });
 	} else if (!req.body.password) {
-		res.render("/register", { message: "Password can not be empty!" });
+		res.render("index", { message: "Password can not be empty!" });
 	} else {
 		var db = req.db;
 		var name = req.body.username;
@@ -18,7 +18,7 @@ module.exports.post_register = function (req, res) {
 				res.send("find wrong");
 			} else {
 				if (docs) {
-					res.render("register", { message: "User already registered!" });
+					res.render("index", { message: "User already registered!" });
 				} else {
 					// Register a new user.
 					collection.insert(
