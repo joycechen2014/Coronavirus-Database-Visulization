@@ -126,7 +126,8 @@ input[type=text], [type=password], [type=email], [type=tel]:invalid {
     border-bottom: 1px #fff;
     border-radius: 5px;
     margin: 5px;
-    font-weight: bold;
+    border: 1px solid #ced4da;
+    background-color: #fff;
 }
 
 select {
