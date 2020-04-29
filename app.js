@@ -47,4 +47,4 @@ var db = monk('mongodb+srv://cmpe280-backup-4c9xo.mongodb.net/Coronavirus?retryW
 app.use("/", index);
 
 module.exports = app;
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
