@@ -51,15 +51,15 @@ module.exports.post_login = function (req, res) {
 	var name = req.body.username;
 	var pass = req.body.password;
 	var collection = db.get("user");
-	collection.find({ username: name, password: pass }, function (err, docs) {
+	collection.findOne({ username: name, password: pass }, function (err, docs) {
 		if (err) {
 			res.send("find wrong");
 		} else {
+			console.log(docs);
 			if (docs) {
 				console.log("Sucessfully logged in:");
 				req.session.user = req.body.username;
 				console.log(req.session.user);
-				// res.render("loggedin", { name: req.session.user.username });
 				res.redirect('dashboard');
 			} else {
 				res.render("index", { message: "Username or password invalid!" });
